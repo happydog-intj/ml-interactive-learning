@@ -8,6 +8,7 @@ import { ChapterHeader } from '@/components/ui/ChapterHeader'
 import { Section } from '@/components/ui/Section'
 import { InfoCard } from '@/components/ui/InfoCard'
 import { DemoCard } from '@/components/ui/DemoCard'
+import { CodePlayground } from '@/components/ui/CodePlayground'
 
 export default function Chapter3() {
   return (
@@ -187,6 +188,56 @@ export default function Chapter3() {
             gradient="from-ml-blue via-ml-purple to-ml-cyan"
           >
             <LossSurface3D />
+          </DemoCard>
+
+          <DemoCard
+            title="代码实践：实现梯度下降"
+            description="动手实现简单的梯度下降算法，加深对优化过程的理解。"
+            icon="💻"
+            gradient="from-ml-purple to-ml-blue"
+          >
+            <CodePlayground
+              title="实现梯度下降算法"
+              description="完成 gradient_descent 函数，使用梯度下降优化二次函数 f(x) = x²"
+              language="python"
+              initialCode={`def gradient_descent(learning_rate, num_iterations):
+    """
+    使用梯度下降优化 f(x) = x^2
+
+    参数:
+        learning_rate: 学习率
+        num_iterations: 迭代次数
+
+    返回:
+        x: 最终的 x 值
+        history: 优化过程中的 x 值列表
+    """
+    x = 10.0  # 初始值
+    history = [x]
+
+    for i in range(num_iterations):
+        # TODO: 计算梯度 df/dx = 2x
+        gradient = 0  # 请修改这里
+
+        # TODO: 更新 x 值
+        x = x  # 请修改这里
+
+        history.append(x)
+
+    return x, history
+
+# 测试代码
+final_x, path = gradient_descent(learning_rate=0.1, num_iterations=20)
+print(f"最终 x 值: {final_x:.6f}")
+print(f"最终 f(x) 值: {final_x**2:.6f}")
+print(f"优化路径长度: {len(path)}")
+`}
+              expectedOutput={`最终 x 值: 0.000000
+最终 f(x) 值: 0.000000
+优化路径长度: 21
+
+(期望结果：x 应该收敛到 0 附近)`}
+            />
           </DemoCard>
         </Section>
 

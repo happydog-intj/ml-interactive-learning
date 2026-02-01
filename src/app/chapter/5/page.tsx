@@ -8,6 +8,7 @@ import { ChapterHeader } from '@/components/ui/ChapterHeader'
 import { Section } from '@/components/ui/Section'
 import { InfoCard } from '@/components/ui/InfoCard'
 import { DemoCard } from '@/components/ui/DemoCard'
+import { CodePlayground } from '@/components/ui/CodePlayground'
 
 export default function Chapter5() {
   return (
@@ -591,6 +592,72 @@ export default function Chapter5() {
               </div>
             </div>
           </InfoCard>
+
+          <DemoCard
+            title="代码实践：实现Sigmoid激活函数"
+            description="动手实现神经网络中最基础的激活函数，理解其数学原理。"
+            icon="💻"
+            gradient="from-ml-purple to-ml-cyan"
+          >
+            <CodePlayground
+              title="实现 Sigmoid 激活函数及其导数"
+              description="完成 sigmoid 函数和 sigmoid_derivative 函数的实现"
+              language="python"
+              initialCode={`import math
+
+def sigmoid(x):
+    """
+    Sigmoid 激活函数: σ(x) = 1 / (1 + e^(-x))
+
+    参数:
+        x: 输入值
+
+    返回:
+        sigmoid(x)
+    """
+    # TODO: 实现 sigmoid 函数
+    return 0  # 请修改这里
+
+
+def sigmoid_derivative(x):
+    """
+    Sigmoid 函数的导数: σ'(x) = σ(x) * (1 - σ(x))
+
+    参数:
+        x: 输入值
+
+    返回:
+        sigmoid 的导数值
+    """
+    # TODO: 实现 sigmoid 导数
+    # 提示: 可以调用上面的 sigmoid 函数
+    return 0  # 请修改这里
+
+
+# 测试代码
+test_values = [-2, -1, 0, 1, 2]
+
+print("x\\t\\tσ(x)\\t\\tσ'(x)")
+print("-" * 40)
+for x in test_values:
+    sig = sigmoid(x)
+    sig_prime = sigmoid_derivative(x)
+    print(f"{x:.1f}\\t\\t{sig:.4f}\\t\\t{sig_prime:.4f}")
+`}
+              expectedOutput={`x		σ(x)		σ'(x)
+----------------------------------------
+-2.0		0.1192		0.1050
+-1.0		0.2689		0.1966
+0.0		0.5000		0.2500
+1.0		0.7311		0.1966
+2.0		0.8808		0.1050
+
+特性观察:
+- σ(0) = 0.5 (中心点)
+- σ(-x) = 1 - σ(x) (对称性)
+- σ'(x) 在 x=0 处最大 (0.25)`}
+            />
+          </DemoCard>
         </Section>
 
         <InfoCard title="本章小结" icon="📝" variant="success">
