@@ -44,6 +44,116 @@ const chapters = [
     glowColor: 'shadow-[0_0_30px_rgba(255,51,102,0.3)]',
     completionPercent: 100,
   },
+  {
+    id: 6,
+    title: '支持向量机',
+    subtitle: 'Support Vector Machine',
+    status: '已完成',
+    icon: '⚖️',
+    gradient: 'from-ml-blue via-ml-purple to-ml-red',
+    glowColor: 'shadow-[0_0_30px_rgba(99,102,241,0.3)]',
+    completionPercent: 100,
+  },
+  {
+    id: 7,
+    title: '贝叶斯分类器',
+    subtitle: 'Bayesian Classifier',
+    status: '框架完成',
+    icon: '🎲',
+    gradient: 'from-ml-cyan via-ml-green to-ml-yellow',
+    glowColor: 'shadow-[0_0_30px_rgba(0,217,255,0.3)]',
+    completionPercent: 60,
+  },
+  {
+    id: 8,
+    title: '集成学习',
+    subtitle: 'Ensemble Learning',
+    status: '框架完成',
+    icon: '🎯',
+    gradient: 'from-ml-orange via-ml-red to-ml-purple',
+    glowColor: 'shadow-[0_0_30px_rgba(255,138,0,0.3)]',
+    completionPercent: 60,
+  },
+  {
+    id: 9,
+    title: '聚类',
+    subtitle: 'Clustering',
+    status: '框架完成',
+    icon: '🔮',
+    gradient: 'from-ml-purple via-ml-cyan to-ml-blue',
+    glowColor: 'shadow-[0_0_30px_rgba(184,76,255,0.3)]',
+    completionPercent: 60,
+  },
+  {
+    id: 10,
+    title: '降维与度量学习',
+    subtitle: 'Dimensionality Reduction',
+    status: '框架完成',
+    icon: '📐',
+    gradient: 'from-ml-green via-ml-blue to-ml-purple',
+    glowColor: 'shadow-[0_0_30px_rgba(0,255,136,0.3)]',
+    completionPercent: 60,
+  },
+  {
+    id: 11,
+    title: '特征选择与稀疏学习',
+    subtitle: 'Feature Selection',
+    status: '框架完成',
+    icon: '🎨',
+    gradient: 'from-ml-yellow via-ml-orange to-ml-red',
+    glowColor: 'shadow-[0_0_30px_rgba(255,215,0,0.3)]',
+    completionPercent: 60,
+  },
+  {
+    id: 12,
+    title: '计算学习理论',
+    subtitle: 'Learning Theory',
+    status: '框架完成',
+    icon: '📚',
+    gradient: 'from-ml-blue via-ml-cyan to-ml-green',
+    glowColor: 'shadow-[0_0_30px_rgba(99,102,241,0.3)]',
+    completionPercent: 60,
+  },
+  {
+    id: 13,
+    title: '半监督学习',
+    subtitle: 'Semi-Supervised Learning',
+    status: '框架完成',
+    icon: '🌓',
+    gradient: 'from-ml-purple via-ml-blue to-ml-cyan',
+    glowColor: 'shadow-[0_0_30px_rgba(184,76,255,0.3)]',
+    completionPercent: 60,
+  },
+  {
+    id: 14,
+    title: '概率图模型',
+    subtitle: 'Graphical Models',
+    status: '框架完成',
+    icon: '🕸️',
+    gradient: 'from-ml-cyan via-ml-purple to-ml-red',
+    glowColor: 'shadow-[0_0_30px_rgba(0,217,255,0.3)]',
+    completionPercent: 60,
+  },
+  {
+    id: 15,
+    title: '规则学习',
+    subtitle: 'Rule Learning',
+    status: '框架完成',
+    icon: '📜',
+    gradient: 'from-ml-orange via-ml-yellow to-ml-green',
+    glowColor: 'shadow-[0_0_30px_rgba(255,138,0,0.3)]',
+    completionPercent: 60,
+  },
+  {
+    id: 16,
+    title: '强化学习',
+    subtitle: 'Reinforcement Learning',
+    status: '框架完成',
+    icon: '🎮',
+    gradient: 'from-ml-red via-ml-purple to-ml-blue',
+    glowColor: 'shadow-[0_0_30px_rgba(255,51,102,0.3)]',
+    completionPercent: 60,
+  },
 ]
 
 export default function Home() {
@@ -87,13 +197,13 @@ export default function Home() {
           {/* Stats bar */}
           <div className="flex justify-center gap-8 mb-16 flex-wrap">
             <div className="text-center">
-              <div className="text-3xl font-bold text-ml-cyan mb-1">5</div>
+              <div className="text-3xl font-bold text-ml-cyan mb-1">16</div>
               <div className="text-sm text-gray-100 font-mono">章节</div>
             </div>
             <div className="w-px bg-ml-border" />
             <div className="text-center">
-              <div className="text-3xl font-bold text-ml-green mb-1">20+</div>
-              <div className="text-sm text-gray-100 font-mono">交互演示</div>
+              <div className="text-3xl font-bold text-ml-green mb-1">80+</div>
+              <div className="text-sm text-gray-100 font-mono">核心概念</div>
             </div>
             <div className="w-px bg-ml-border" />
             <div className="text-center">
