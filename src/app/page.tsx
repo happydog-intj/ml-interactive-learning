@@ -28,11 +28,11 @@ const chapters = [
     id: 4,
     title: '决策树',
     subtitle: 'Decision Trees',
-    status: '计划中',
+    status: '已完成',
     icon: '🌳',
     gradient: 'from-ml-purple via-ml-blue to-ml-cyan',
     glowColor: 'shadow-[0_0_30px_rgba(184,76,255,0.3)]',
-    completionPercent: 0,
+    completionPercent: 100,
   },
   {
     id: 5,
