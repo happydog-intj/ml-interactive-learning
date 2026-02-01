@@ -281,7 +281,7 @@ export function LinearRegressionDemo() {
             </div>
 
             <div className="mt-4 pt-4 border-t border-gray-700">
-              <p className="text-sm text-gray-400 mb-2">当前模型:</p>
+              <p className="text-sm text-gray-200 mb-2">当前模型:</p>
               <p className="text-white font-mono">
                 y = <span className="text-ml-blue">{slope.toFixed(2)}</span>x + <span className="text-ml-blue">{intercept.toFixed(2)}</span>
               </p>
@@ -293,12 +293,12 @@ export function LinearRegressionDemo() {
             <h3 className="text-lg font-semibold mb-4 text-ml-blue">损失函数 (MSE)</h3>
             <div className="space-y-3">
               <div className="flex justify-between items-center">
-                <span className="text-gray-400">当前损失:</span>
+                <span className="text-gray-200">当前损失:</span>
                 <span className="text-2xl font-bold text-ml-blue">{currentLoss.toFixed(2)}</span>
               </div>
               {showBestFit && (
                 <div className="flex justify-between items-center text-sm">
-                  <span className="text-gray-400">最优损失:</span>
+                  <span className="text-gray-200">最优损失:</span>
                   <span className="text-green-400 font-bold">{bestLoss.toFixed(2)}</span>
                 </div>
               )}
@@ -337,7 +337,7 @@ export function LinearRegressionDemo() {
           {showBestFit && (
             <div className="bg-green-900/20 border border-green-500 p-4 rounded-lg">
               <h4 className="text-sm font-semibold text-green-400 mb-2">最优参数</h4>
-              <p className="text-sm text-gray-300 font-mono">
+              <p className="text-sm text-gray-100 font-mono">
                 y = <span className="text-green-400">{bestFit.slope.toFixed(2)}</span>x + <span className="text-green-400">{bestFit.intercept.toFixed(2)}</span>
               </p>
             </div>
@@ -350,18 +350,18 @@ export function LinearRegressionDemo() {
         <div className="grid md:grid-cols-3 gap-4 text-sm">
           <div>
             <span className="text-yellow-500 font-bold">● 橙色圆点</span>
-            <p className="text-gray-400 mt-1">训练数据点</p>
+            <p className="text-gray-200 mt-1">训练数据点</p>
           </div>
           <div>
             <span className="text-ml-blue font-bold">━ 蓝色直线</span>
-            <p className="text-gray-400 mt-1">当前拟合线</p>
+            <p className="text-gray-200 mt-1">当前拟合线</p>
           </div>
           <div>
             <span className="text-red-400 font-bold">| 红色线段</span>
-            <p className="text-gray-400 mt-1">预测误差（残差）</p>
+            <p className="text-gray-200 mt-1">预测误差（残差）</p>
           </div>
         </div>
-        <p className="text-gray-400 text-sm mt-4">
+        <p className="text-gray-200 text-sm mt-4">
           💡 提示：手动调整斜率和截距，观察损失函数的变化。点击"梯度下降训练"观看算法自动寻找最优解的过程。
         </p>
       </div>

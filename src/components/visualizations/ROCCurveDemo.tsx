@@ -276,7 +276,7 @@ export function ROCCurveDemo() {
           onChange={(e) => setThreshold(Number(e.target.value))}
           className="w-full accent-ml-blue"
         />
-        <div className="flex justify-between text-xs text-gray-400 mt-1">
+        <div className="flex justify-between text-xs text-gray-200 mt-1">
           <span>0.00</span>
           <span>1.00</span>
         </div>
@@ -298,19 +298,19 @@ export function ROCCurveDemo() {
             <div className="grid grid-cols-2 gap-2 text-center text-sm">
               <div className="bg-green-900/30 border border-green-500 p-3 rounded">
                 <div className="text-green-400 font-bold text-xl">{confusionMatrix.tp}</div>
-                <div className="text-xs text-gray-400">真正例 (TP)</div>
+                <div className="text-xs text-gray-200">真正例 (TP)</div>
               </div>
               <div className="bg-red-900/30 border border-red-500 p-3 rounded">
                 <div className="text-red-400 font-bold text-xl">{confusionMatrix.fp}</div>
-                <div className="text-xs text-gray-400">假正例 (FP)</div>
+                <div className="text-xs text-gray-200">假正例 (FP)</div>
               </div>
               <div className="bg-red-900/30 border border-red-500 p-3 rounded">
                 <div className="text-red-400 font-bold text-xl">{confusionMatrix.fn}</div>
-                <div className="text-xs text-gray-400">假负例 (FN)</div>
+                <div className="text-xs text-gray-200">假负例 (FN)</div>
               </div>
               <div className="bg-green-900/30 border border-green-500 p-3 rounded">
                 <div className="text-green-400 font-bold text-xl">{confusionMatrix.tn}</div>
-                <div className="text-xs text-gray-400">真负例 (TN)</div>
+                <div className="text-xs text-gray-200">真负例 (TN)</div>
               </div>
             </div>
           </div>
@@ -320,23 +320,23 @@ export function ROCCurveDemo() {
             <h3 className="text-lg font-semibold mb-3 text-ml-blue">评估指标</h3>
             <div className="space-y-2 text-sm">
               <div className="flex justify-between">
-                <span className="text-gray-400">准确率 (Accuracy):</span>
+                <span className="text-gray-200">准确率 (Accuracy):</span>
                 <span className="text-white font-bold">{(accuracy * 100).toFixed(1)}%</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-400">精确率 (Precision):</span>
+                <span className="text-gray-200">精确率 (Precision):</span>
                 <span className="text-white font-bold">{(precision * 100).toFixed(1)}%</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-400">召回率 (Recall/TPR):</span>
+                <span className="text-gray-200">召回率 (Recall/TPR):</span>
                 <span className="text-white font-bold">{(recall * 100).toFixed(1)}%</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-400">F1 分数:</span>
+                <span className="text-gray-200">F1 分数:</span>
                 <span className="text-white font-bold">{(f1Score * 100).toFixed(1)}%</span>
               </div>
               <div className="flex justify-between border-t border-gray-700 pt-2 mt-2">
-                <span className="text-gray-400">FPR:</span>
+                <span className="text-gray-200">FPR:</span>
                 <span className="text-white font-bold">{(currentPoint[0] * 100).toFixed(1)}%</span>
               </div>
             </div>
@@ -346,10 +346,10 @@ export function ROCCurveDemo() {
           <div className="bg-ml-bg-dark p-4 rounded-lg">
             <h3 className="text-lg font-semibold mb-2 text-yellow-500">当前操作点</h3>
             <div className="text-sm space-y-1">
-              <p className="text-gray-300">
+              <p className="text-gray-100">
                 TPR: <span className="text-white font-bold">{(currentPoint[1] * 100).toFixed(1)}%</span>
               </p>
-              <p className="text-gray-300">
+              <p className="text-gray-100">
                 FPR: <span className="text-white font-bold">{(currentPoint[0] * 100).toFixed(1)}%</span>
               </p>
             </div>
@@ -358,7 +358,7 @@ export function ROCCurveDemo() {
       </div>
 
       {/* 说明文字 */}
-      <div className="mt-6 text-sm text-gray-300 space-y-2">
+      <div className="mt-6 text-sm text-gray-100 space-y-2">
         <p>
           <strong className="text-ml-blue">AUC (Area Under Curve)</strong>:
           曲线下方面积，值越接近1，模型性能越好。当前 AUC = {auc.toFixed(3)}
@@ -368,7 +368,7 @@ export function ROCCurveDemo() {
           表示当前阈值下的操作点，调整滑块可观察不同阈值对分类结果的影响
         </p>
         <p>
-          <strong className="text-gray-400">灰色虚线</strong>:
+          <strong className="text-gray-200">灰色虚线</strong>:
           表示随机猜测的性能基线（AUC = 0.5）
         </p>
       </div>

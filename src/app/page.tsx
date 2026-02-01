@@ -41,7 +41,7 @@ export default function Home() {
           教学
         </h1>
         
-        <p className="text-xl text-center text-gray-300 mb-12">
+        <p className="text-xl text-center text-gray-100 mb-12">
           基于周志华《机器学习》教材，用动画和交互理解每一个概念
         </p>
         

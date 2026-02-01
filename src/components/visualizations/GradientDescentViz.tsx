@@ -258,19 +258,19 @@ export function GradientDescentViz() {
             <h3 className="text-lg font-semibold mb-3 text-ml-blue">当前状态</h3>
             <div className="space-y-2 text-sm">
               <div className="flex justify-between">
-                <span className="text-gray-400">迭代次数:</span>
+                <span className="text-gray-200">迭代次数:</span>
                 <span className="text-white font-bold">{iteration}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-400">参数 x:</span>
+                <span className="text-gray-200">参数 x:</span>
                 <span className="text-yellow-400 font-bold">{currentX.toFixed(3)}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-400">损失 L(x):</span>
+                <span className="text-gray-200">损失 L(x):</span>
                 <span className="text-ml-blue font-bold">{currentLoss.toFixed(3)}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-400">梯度 ∂L/∂x:</span>
+                <span className="text-gray-200">梯度 ∂L/∂x:</span>
                 <span className="text-red-400 font-bold">{currentGrad.toFixed(3)}</span>
               </div>
             </div>
@@ -291,7 +291,7 @@ export function GradientDescentViz() {
               disabled={isAnimating}
               className="w-full accent-ml-blue"
             />
-            <p className="text-xs text-gray-400 mt-2">
+            <p className="text-xs text-gray-200 mt-2">
               更新规则: x ← x - α·∂L/∂x
             </p>
           </div>
@@ -343,19 +343,19 @@ export function GradientDescentViz() {
       <div className="mt-6 grid md:grid-cols-4 gap-4 text-sm">
         <div className="bg-ml-bg-dark p-3 rounded">
           <span className="text-ml-blue font-bold">━ 蓝色曲线</span>
-          <p className="text-gray-400 mt-1">损失函数 L(x) = (x-2)² + 1</p>
+          <p className="text-gray-200 mt-1">损失函数 L(x) = (x-2)² + 1</p>
         </div>
         <div className="bg-ml-bg-dark p-3 rounded">
           <span className="text-yellow-500 font-bold">● 橙色圆点</span>
-          <p className="text-gray-400 mt-1">当前参数位置</p>
+          <p className="text-gray-200 mt-1">当前参数位置</p>
         </div>
         <div className="bg-ml-bg-dark p-3 rounded">
           <span className="text-red-400 font-bold">━ ━ 红色虚线</span>
-          <p className="text-gray-400 mt-1">当前梯度方向（切线）</p>
+          <p className="text-gray-200 mt-1">当前梯度方向（切线）</p>
         </div>
         <div className="bg-ml-bg-dark p-3 rounded">
           <span className="text-purple-400 font-bold">· · · 紫色路径</span>
-          <p className="text-gray-400 mt-1">优化轨迹</p>
+          <p className="text-gray-200 mt-1">优化轨迹</p>
         </div>
       </div>
     </div>

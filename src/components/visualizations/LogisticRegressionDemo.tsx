@@ -253,7 +253,7 @@ export function LogisticRegressionDemo() {
             </div>
 
             <div className="mt-4 pt-4 border-t border-gray-700">
-              <p className="text-xs text-gray-400 mb-2">决策边界方程:</p>
+              <p className="text-xs text-gray-200 mb-2">决策边界方程:</p>
               <p className="text-white font-mono text-sm break-words">
                 {w1.toFixed(2)}·x₁ + {w2.toFixed(2)}·x₂ + {b.toFixed(2)} = 0
               </p>
@@ -267,21 +267,21 @@ export function LogisticRegressionDemo() {
               <div className="text-4xl font-bold text-green-400 mb-2">
                 {accuracy.toFixed(1)}%
               </div>
-              <p className="text-sm text-gray-400">准确率</p>
+              <p className="text-sm text-gray-200">准确率</p>
             </div>
           </div>
 
           {/* Sigmoid 函数说明 */}
           <div className="bg-ml-bg-dark p-4 rounded-lg">
             <h3 className="text-sm font-semibold mb-2 text-ml-yellow">Sigmoid 函数</h3>
-            <p className="text-xs text-gray-400 mb-2 font-mono">
+            <p className="text-xs text-gray-200 mb-2 font-mono">
               σ(z) = 1 / (1 + e⁻ᶻ)
             </p>
-            <p className="text-xs text-gray-400">
+            <p className="text-xs text-gray-200">
               其中 z = w₁·x₁ + w₂·x₂ + b
             </p>
             <div className="mt-3 pt-3 border-t border-gray-700">
-              <p className="text-xs text-gray-400">
+              <p className="text-xs text-gray-200">
                 输出范围: (0, 1)<br/>
                 决策阈值: 0.5
               </p>
@@ -307,18 +307,18 @@ export function LogisticRegressionDemo() {
         <div className="grid md:grid-cols-3 gap-4 text-sm">
           <div>
             <span className="text-green-400 font-bold">● 绿色圆点</span>
-            <p className="text-gray-400 mt-1">正类样本 (label = 1)</p>
+            <p className="text-gray-200 mt-1">正类样本 (label = 1)</p>
           </div>
           <div>
             <span className="text-red-400 font-bold">● 红色圆点</span>
-            <p className="text-gray-400 mt-1">负类样本 (label = 0)</p>
+            <p className="text-gray-200 mt-1">负类样本 (label = 0)</p>
           </div>
           <div>
             <span className="text-white font-bold">━ ━ 白色虚线</span>
-            <p className="text-gray-400 mt-1">决策边界 (P = 0.5)</p>
+            <p className="text-gray-200 mt-1">决策边界 (P = 0.5)</p>
           </div>
         </div>
-        <p className="text-gray-400 text-sm mt-4">
+        <p className="text-gray-200 text-sm mt-4">
           🎨 <strong>背景颜色</strong>表示分类概率：红色区域倾向于类别0，蓝色区域倾向于类别1。
           调整参数观察决策边界如何移动。
         </p>
