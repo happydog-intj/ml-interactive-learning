@@ -153,6 +153,13 @@ npm start
 npx tsc --noEmit
 ```
 
+### 运行测试
+```bash
+npm test                # 运行全部测试
+npm run test:watch      # 监听模式
+npm run test:coverage   # 生成覆盖率报告
+```
+
 ## 🎨 设计系统
 
 完整设计文档：[DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md)
@@ -234,9 +241,9 @@ slide-in: 0.5s ease-out               /* 侧滑入场 */
 - [x] **3D可视化示例** - 3D损失曲面可视化（Three.js + React Three Fiber）
 - [x] **真实数据集集成** - Iris、Wine、Digits数据集，支持逻辑回归演示
 - [x] **Monaco代码编辑器** - 交互式代码练习环境，支持Python/JavaScript
+- [x] **测试框架** - Jest + React Testing Library，33个测试用例全部通过
 
 ### 🔄 待实现
-- [ ] 测试框架建立（Jest + Testing Library）
 - [ ] 部署配置（Vercel/Netlify）
 
 ### 🎯 未来计划
