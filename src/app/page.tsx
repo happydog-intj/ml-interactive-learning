@@ -1,5 +1,12 @@
 import Link from 'next/link'
 
+const chapters = [
+  { id: 2, title: '模型评估与选择', status: '已完成', color: 'ml-blue' },
+  { id: 3, title: '线性模型', status: '开发中', color: 'ml-yellow' },
+  { id: 4, title: '决策树', status: '计划中', color: 'ml-purple' },
+  { id: 5, title: '神经网络', status: '计划中', color: 'ml-red' },
+]
+
 export default function Home() {
   return (
     <main className="min-h-screen bg-ml-bg-dark text-white">
@@ -15,15 +22,17 @@ export default function Home() {
         </p>
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {/* 章节卡片 */}
-          {[2, 3, 4, 5].map(chapter => (
+          {chapters.map(chapter => (
             <Link 
-              key={chapter}
-              href={`/chapter/${chapter}`}
-              className="bg-ml-bg-secondary p-6 rounded-lg hover:bg-ml-bg-secondary/80 transition"
+              key={chapter.id}
+              href={`/chapter/${chapter.id}`}
+              className={`bg-ml-bg-secondary p-6 rounded-lg hover:scale-105 transition-transform border-2 border-${chapter.color}`}
             >
-              <h2 className="text-2xl font-bold mb-2">第{chapter}章</h2>
-              <p className="text-gray-400">即将推出</p>
+              <h2 className="text-2xl font-bold mb-2">第{chapter.id}章</h2>
+              <h3 className="text-lg mb-3">{chapter.title}</h3>
+              <span className={`text-sm px-2 py-1 rounded bg-${chapter.color}/20 text-${chapter.color}`}>
+                {chapter.status}
+              </span>
             </Link>
           ))}
         </div>
