@@ -1,14 +1,44 @@
 # 机器学习交互式学习平台
 
-基于《机器学习》（周志华）的交互式学习平台，通过可视化和动画深入理解机器学习核心概念。
+<div align="center">
 
-## 🎯 项目特色
+![ML Interactive Learning](https://img.shields.io/badge/ML-Interactive_Learning-00D9FF?style=for-the-badge)
+![Next.js](https://img.shields.io/badge/Next.js-16-black?style=for-the-badge&logo=next.js)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.0-blue?style=for-the-badge&logo=typescript)
+![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)
 
-- **3Blue1Brown 风格动画**：精心设计的 GSAP 动画展示数学公式推导过程
-- **交互式可视化**：使用 D3.js 实现的实时交互演示，可调整参数观察效果
-- **完整的理论内容**：从基础概念到数学推导，循序渐进的学习路径
-- **实战练习**：每章配备思考题和实践练习
-- **响应式设计**：适配各种屏幕尺寸，优雅的暗色主题
+**基于周志华《机器学习》教材的交互式学习平台**
+
+通过动画和交互式可视化深入理解机器学习核心概念
+
+[在线演示](#) | [快速开始](#-快速开始) | [功能特性](#-功能特性)
+
+</div>
+
+---
+
+## ✨ 功能特性
+
+### 📚 完整的课程体系
+
+5个核心章节全部完成，包含20+交互式可视化
+
+| 章节 | 标题 | 主要内容 | 交互演示 | 状态 |
+|------|------|---------|---------|------|
+| 📊 **第2章** | 模型评估与选择 | 混淆矩阵、ROC曲线、AUC、偏差方差 | ROC曲线演示、公式推导动画 | ✅ 完成 |
+| 📈 **第3章** | 线性模型 | 线性回归、梯度下降、逻辑回归、正则化 | 线性回归、梯度下降、逻辑回归演示 | ✅ 完成 |
+| 🌳 **第4章** | 决策树 | 信息增益、基尼指数、剪枝、连续值处理 | 决策树构建器、信息熵计算器 | ✅ 完成 |
+| 🧠 **第5章** | 神经网络 | 神经元模型、前向传播、反向传播、深度学习 | 网络结构可视化、激活函数对比、BP算法演示 | ✅ 完成 |
+
+### 🎨 现代化设计系统
+
+**"Scientific Elegance with Kinetic Energy"**
+
+- 🌈 **大胆配色**: 电光青 • 紫色 • 霓虹绿 • 渐变效果
+- ✨ **精致动画**: 页面加载序列 • 3D卡片变换 • 悬停发光
+- 🎯 **高对比度**: 15:1+对比度，深空背景+亮色文字
+- 📐 **技术美感**: 网格图案 • 几何精确 • 锐利边框
+- 🔤 **独特字体**: Sora（现代几何） + JetBrains Mono（技术精确）
 
 ## 🚀 技术栈
 
@@ -125,67 +155,141 @@ npx tsc --noEmit
 
 ## 🎨 设计系统
 
-### 颜色方案
-- **ml-blue**: `#58C4DD` - 主题色
-- **ml-yellow**: 警告和强调
-- **ml-red**: 错误和负类
-- **ml-green**: 成功和正类
-- **ml-purple**: 特殊高亮
+完整设计文档：[DESIGN_SYSTEM.md](./DESIGN_SYSTEM.md)
 
-### 字体
-- 内容：Inter, Noto Sans SC
-- 代码：Fira Code, Monaco
+### 配色方案 2.0
+
+```css
+/* 主色调 - 电光科技感 */
+--ml-blue:   #00D9FF  /* 电光青 */
+--ml-cyan:   #00FFF5  /* 亮青色 */
+--ml-purple: #B84CFF  /* 生动紫 */
+--ml-green:  #00FF88  /* 霓虹绿 */
+--ml-yellow: #FFE600  /* 亮黄色 */
+--ml-orange: #FF8A00  /* 橙色 */
+--ml-red:    #FF3366  /* 红色 */
+
+/* 背景 - 深空主题 */
+--ml-bg-dark:      #0A0E14  /* 主背景 */
+--ml-bg-secondary: #151B26  /* 次级表面 */
+--ml-bg-card:      #1A2332  /* 卡片背景 */
+--ml-border:       #2A3C52  /* 边框 */
+```
+
+### 字体系统
+
+- **Sora**: 现代几何无衬线字体（标题+正文）
+- **JetBrains Mono**: 等宽技术字体（代码+数据）
+- **Noto Sans SC**: 中文回退字体
+
+### 动画库
+
+```css
+gradient-shift: 8s ease infinite      /* 渐变漂移 */
+float: 6s ease-in-out infinite        /* 浮动效果 */
+pulse-glow: 2s ease-in-out infinite   /* 脉冲发光 */
+slide-up: 0.6s ease-out               /* 上滑入场 */
+slide-in: 0.5s ease-out               /* 侧滑入场 */
+```
+
+## 🎮 交互式可视化亮点
+
+### 第2章：模型评估与选择
+- 📊 **ROC曲线演示** - 实时阈值调整，观察TPR/FPR变化，混淆矩阵联动
+- 🎬 **公式推导动画** - 3Blue1Brown风格，混淆矩阵→TPR/FPR公式逐步推导
+
+### 第3章：线性模型
+- 📈 **线性回归演示** - 手动调参or梯度下降训练，残差可视化
+- 🔄 **梯度下降可视化** - 损失曲面，优化轨迹，学习率影响
+- 🎯 **逻辑回归演示** - 决策边界，概率热图，Sigmoid函数
+
+### 第4章：决策树
+- 🌳 **决策树构建器** - 3种划分标准对比，决策边界可视化，节点检查
+- 📊 **信息熵计算器** - 实时计算熵值，可视化计算过程，饼图分布
+
+### 第5章：神经网络
+- 🧠 **神经网络结构** - 可调节层数节点数，前向传播动画
+- 📉 **激活函数对比** - 4种函数（Sigmoid/ReLU/Tanh/Leaky ReLU）图形+导数
+- 🔁 **反向传播演示** - 4阶段完整BP算法，梯度和权重实时显示
 
 ## 📋 开发路线图
 
-### ✅ 已完成
+### ✅ 已完成（2024）
 - [x] 项目初始化和技术栈搭建
-- [x] 设计系统和颜色方案
-- [x] 第2章：模型评估与选择（完整）
-- [x] 第3章：线性模型（完整）
-- [x] ML 算法库基础设施
+- [x] 设计系统2.0（Scientific Elegance风格）
+- [x] **第2章**：模型评估与选择（完整）
+- [x] **第3章**：线性模型（完整）
+- [x] **第4章**：决策树（完整）
+- [x] **第5章**：神经网络（完整）
+- [x] ML算法库基础设施
 - [x] 通用图表组件库
+- [x] UI组件库（ChapterNav, ChapterHeader, InfoCard, DemoCard, Section）
 - [x] 根布局优化和元数据
+- [x] 完整的设计文档
 
 ### 🔄 待实现
-- [ ] 第4章：决策树
-- [ ] 第5章：神经网络
-- [ ] 3D 可视化示例（损失曲面）
+- [ ] 3D可视化示例（损失曲面）
 - [ ] 真实数据集集成（Iris, Wine, Digits）
-- [ ] Monaco 代码编辑器集成
-- [ ] 测试框架建立
-- [ ] 性能优化
-- [ ] 部署配置
+- [ ] Monaco代码编辑器集成
+- [ ] 测试框架建立（Jest + Testing Library）
+- [ ] 部署配置（Vercel/Netlify）
 
 ### 🎯 未来计划
 - [ ] 第6章：支持向量机
+- [ ] 第7章：贝叶斯分类器
 - [ ] 第8章：集成学习
 - [ ] 用户进度跟踪
-- [ ] 代码练习评测
-- [ ] 多语言支持
+- [ ] 代码练习评测系统
+- [ ] 多语言支持（英文）
+- [ ] 移动端App（React Native）
 
 ## 📁 项目结构
 
 ```
 ml-interactive-learning/
 ├── src/
-│   ├── app/                    # Next.js 页面
+│   ├── app/                        # Next.js 16 App Router
 │   │   ├── chapter/
-│   │   │   ├── 2/             # 第2章
-│   │   │   └── 3/             # 第3章
-│   │   ├── layout.tsx         # 根布局
-│   │   └── page.tsx           # 主页
+│   │   │   ├── 2/page.tsx         # 第2章：模型评估与选择
+│   │   │   ├── 3/page.tsx         # 第3章：线性模型
+│   │   │   ├── 4/page.tsx         # 第4章：决策树
+│   │   │   └── 5/page.tsx         # 第5章：神经网络
+│   │   ├── globals.css            # 全局样式+动画
+│   │   ├── layout.tsx             # 根布局+元数据
+│   │   └── page.tsx               # 主页（章节卡片）
 │   ├── components/
-│   │   ├── animations/        # 动画组件
-│   │   ├── charts/           # 通用图表
-│   │   ├── ui/               # UI 组件
-│   │   └── visualizations/   # 专用可视化
+│   │   ├── ui/                    # UI组件库
+│   │   │   ├── ChapterHeader.tsx # 章节标题组件
+│   │   │   ├── ChapterNav.tsx    # 导航栏+进度条
+│   │   │   ├── DemoCard.tsx      # 交互演示包装器
+│   │   │   ├── InfoCard.tsx      # 理论卡片（4种变体）
+│   │   │   └── Section.tsx       # 章节区块
+│   │   ├── visualizations/       # 交互式可视化
+│   │   │   ├── ROCCurveDemo.tsx
+│   │   │   ├── LinearRegressionDemo.tsx
+│   │   │   ├── GradientDescentViz.tsx
+│   │   │   ├── LogisticRegressionDemo.tsx
+│   │   │   ├── DecisionTreeViz.tsx
+│   │   │   ├── EntropyCalculator.tsx
+│   │   │   ├── NeuralNetworkViz.tsx
+│   │   │   ├── ActivationFunctionViz.tsx
+│   │   │   └── BackpropagationDemo.tsx
+│   │   ├── animations/           # GSAP动画
+│   │   │   └── FormulaDerivation.tsx
+│   │   └── charts/              # D3图表组件
+│   │       ├── ScatterPlot.tsx
+│   │       ├── LineChart.tsx
+│   │       └── ConfusionMatrix.tsx
 │   └── lib/
-│       └── ml-algorithms/    # ML 算法库
-├── public/                    # 静态资源
+│       └── ml-algorithms/        # ML算法实现
+│           ├── linear-regression.ts
+│           ├── metrics.ts
+│           └── data-utils.ts
+├── public/                       # 静态资源
+├── DESIGN_SYSTEM.md             # 设计系统文档
 ├── package.json
 ├── tsconfig.json
-├── tailwind.config.ts
+├── tailwind.config.ts           # Tailwind 4配置
 └── README.md
 ```
 
