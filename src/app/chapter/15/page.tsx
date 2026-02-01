@@ -227,8 +227,9 @@ export default function Chapter15() {
           <DemoCard
             title="RIPPER算法演示"
             description="逐步展示RIPPER学习规则的过程（生长、剪枝、优化）"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
 
         {/* Section 15.3: 剪枝优化 */}
@@ -322,8 +323,9 @@ export default function Chapter15() {
           <DemoCard
             title="规则剪枝过程"
             description="可视化规则剪枝如何提升泛化性能"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
 
         {/* Section 15.4: 一阶规则学习 */}
@@ -435,8 +437,9 @@ export default function Chapter15() {
           <DemoCard
             title="ILP家族关系学习"
             description="从家族关系事实中学习grandparent、uncle等关系的规则"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
 
         {/* Section 15.5: 规则集学习 */}
@@ -560,8 +563,9 @@ export default function Chapter15() {
           <DemoCard
             title="决策树转规则集"
             description="演示如何从决策树提取规则，并进行剪枝优化"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
       </main>
     </div>

@@ -285,8 +285,9 @@ export default function Chapter16() {
           <DemoCard
             title="多臂赌博机策略对比"
             description="对比ε-贪心、UCB、汤普森采样的累积奖励曲线"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
 
         {/* Section 16.3: 有模型学习 */}
@@ -404,8 +405,9 @@ export default function Chapter16() {
           <DemoCard
             title="价值迭代可视化"
             description="在GridWorld上展示价值迭代算法的收敛过程"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
 
         {/* Section 16.4: 免模型学习 */}
@@ -510,8 +512,9 @@ export default function Chapter16() {
           <DemoCard
             title="SARSA vs Q-Learning"
             description="在悬崖行走环境中对比SARSA和Q-Learning的学习轨迹"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
 
         {/* Section 16.5: 值函数逼近 */}
@@ -665,8 +668,9 @@ export default function Chapter16() {
           <DemoCard
             title="DQN训练过程"
             description="可视化DQN在CartPole环境中的学习曲线和Q值演化"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
 
         {/* Section 16.6: 模仿学习 */}
@@ -762,8 +766,9 @@ export default function Chapter16() {
           <DemoCard
             title="行为克隆vs DAgger"
             description="对比行为克隆和DAgger在导航任务中的性能差异"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
       </main>
     </div>

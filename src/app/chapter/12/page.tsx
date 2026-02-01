@@ -92,8 +92,9 @@ export default function Chapter12() {
           <DemoCard
             title="PAC学习可视化"
             description="交互式调整ε和δ，观察所需样本数量的变化"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
 
         {/* Section 12.2: PAC学习 */}
@@ -154,8 +155,9 @@ export default function Chapter12() {
           <DemoCard
             title="可实现vs不可知学习"
             description="对比可实现和不可知PAC学习场景下的学习过程"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
 
         {/* Section 12.3: 有限假设空间 */}
@@ -228,8 +230,9 @@ export default function Chapter12() {
           <DemoCard
             title="版本空间收敛过程"
             description="可视化训练样本如何逐步缩小版本空间"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
 
         {/* Section 12.4: VC维 */}
@@ -382,8 +385,9 @@ export default function Chapter12() {
           <DemoCard
             title="Rademacher复杂度演示"
             description="可视化不同假设空间拟合随机噪声的能力"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
 
         {/* Section 12.6: 稳定性 */}
@@ -442,8 +446,9 @@ export default function Chapter12() {
           <DemoCard
             title="算法稳定性对比"
             description="对比有无正则化的算法在训练集扰动下的输出变化"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
       </main>
     </div>

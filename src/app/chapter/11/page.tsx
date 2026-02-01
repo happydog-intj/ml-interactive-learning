@@ -107,8 +107,9 @@ export default function Chapter11() {
           <DemoCard
             title="特征选择过程可视化"
             description="演示前向搜索、后向搜索在不同数据集上的特征选择过程"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
 
         {/* Section 11.2: 过滤式选择 */}
@@ -170,8 +171,9 @@ export default function Chapter11() {
           <DemoCard
             title="Relief算法演示"
             description="可视化Relief如何计算特征权重，区分重要和不重要特征"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
 
         {/* Section 11.3: 包裹式选择 */}
@@ -240,8 +242,9 @@ export default function Chapter11() {
           <DemoCard
             title="包裹式vs过滤式对比"
             description="在相同数据集上对比过滤式和包裹式方法的特征选择结果"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
 
         {/* Section 11.4: 嵌入式选择与L1正则化 */}
@@ -420,8 +423,9 @@ export default function Chapter11() {
           <DemoCard
             title="稀疏表示与字典学习演示"
             description="可视化字典学习过程和稀疏重构效果"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
 
         {/* Section 11.6: 压缩感知 */}
@@ -482,8 +486,9 @@ export default function Chapter11() {
           <DemoCard
             title="压缩感知信号重构"
             description="演示从少量随机测量中重构稀疏信号的过程"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
       </main>
     </div>

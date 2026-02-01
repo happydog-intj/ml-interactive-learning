@@ -79,8 +79,9 @@ export default function Chapter10() {
           <DemoCard
             title="k-NN分类可视化"
             description="交互式调整k值和距离度量，观察决策边界变化"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
 
         {/* Section 10.2: 低维嵌入 */}
@@ -140,8 +141,9 @@ export default function Chapter10() {
           <DemoCard
             title="MDS降维可视化"
             description="将高维数据用MDS降到2维，观察样本分布"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
 
         {/* Section 10.3: 主成分分析 */}
@@ -269,8 +271,9 @@ export default function Chapter10() {
           <DemoCard
             title="KPCA与PCA对比"
             description="在非线性数据（如瑞士卷）上对比KPCA和PCA的降维效果"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
 
         {/* Section 10.5: 流形学习 */}
@@ -331,8 +334,9 @@ export default function Chapter10() {
           <DemoCard
             title="流形学习方法对比"
             description="在瑞士卷、S曲线等流形数据上对比Isomap、LLE、t-SNE效果"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
 
         {/* Section 10.6: 度量学习 */}
@@ -409,8 +413,9 @@ export default function Chapter10() {
           <DemoCard
             title="度量学习可视化"
             description="展示度量学习如何改变特征空间，使得同类样本聚集、异类样本分离"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
       </main>
     </div>

@@ -75,8 +75,9 @@ export default function Chapter9() {
           <DemoCard
             title="聚类性能度量演示"
             description="可视化不同聚类性能指标的计算过程"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
 
         {/* Section 9.2: 原型聚类 */}
@@ -234,8 +235,9 @@ export default function Chapter9() {
           <DemoCard
             title="DBSCAN聚类可视化"
             description="交互式调整ε和MinPts参数，观察聚类结果变化"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
 
         {/* Section 9.4: 层次聚类 */}
@@ -291,8 +293,9 @@ export default function Chapter9() {
           <DemoCard
             title="层次聚类树状图"
             description="可视化AGNES算法的聚类过程和树状图结构"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
 
         {/* Section 9.5: 谱聚类 */}
@@ -346,8 +349,9 @@ export default function Chapter9() {
           <DemoCard
             title="谱聚类可视化"
             description="展示谱聚类如何处理非凸形状的簇（如双月形数据）"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
       </main>
     </div>

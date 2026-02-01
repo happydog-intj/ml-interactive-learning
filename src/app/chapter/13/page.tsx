@@ -108,8 +108,9 @@ export default function Chapter13() {
           <DemoCard
             title="半监督学习假设可视化"
             description="展示聚类假设、流形假设、平滑假设在不同数据分布上的效果"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
 
         {/* Section 13.2: 生成式方法 */}
@@ -155,8 +156,9 @@ export default function Chapter13() {
           <DemoCard
             title="生成式半监督学习演示"
             description="用GMM进行半监督分类，观察未标记数据如何改善类别边界"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
 
         {/* Section 13.3: 半监督SVM */}
@@ -215,8 +217,9 @@ export default function Chapter13() {
           <DemoCard
             title="TSVM决策边界演示"
             description="对比SVM和TSVM的决策边界，观察低密度分离效果"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
 
         {/* Section 13.4: 图半监督学习 */}
@@ -421,8 +424,9 @@ export default function Chapter13() {
           <DemoCard
             title="Co-Training vs Self-Training"
             description="对比协同训练和自训练在双月形数据上的表现"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
 
         {/* Section 13.6: 半监督聚类 */}
@@ -489,8 +493,9 @@ export default function Chapter13() {
           <DemoCard
             title="约束聚类演示"
             description="交互式添加ML和CL约束，观察聚类结果的变化"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
       </main>
     </div>

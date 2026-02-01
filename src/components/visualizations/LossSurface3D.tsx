@@ -111,8 +111,6 @@ function Surface({
 }
 
 function GradientPath({ points }: { points: Point3D[] }) {
-  const pathRef = useRef<THREE.Line>(null)
-
   const geometry = useMemo(() => {
     if (points.length < 2) return null
 
@@ -132,9 +130,7 @@ function GradientPath({ points }: { points: Point3D[] }) {
 
   return (
     <>
-      <line ref={pathRef} geometry={geometry}>
-        <lineBasicMaterial color="#00D9FF" linewidth={3} />
-      </line>
+      <primitive object={new THREE.Line(geometry, new THREE.LineBasicMaterial({ color: "#00D9FF", linewidth: 3 }))} />
 
       {/* Points along path */}
       {points.map((point, idx) => (

@@ -144,8 +144,9 @@ export default function Chapter14() {
           <DemoCard
             title="Viterbi算法可视化"
             description="动态展示Viterbi算法在词性标注任务中的解码过程"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
 
         {/* Section 14.2: 马尔可夫随机场 */}
@@ -267,8 +268,9 @@ export default function Chapter14() {
           <DemoCard
             title="CRF序列标注演示"
             description="展示CRF在命名实体识别任务中的标注过程"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
 
         {/* Section 14.3: 学习与推断 */}
@@ -395,8 +397,9 @@ export default function Chapter14() {
           <DemoCard
             title="贝叶斯网络结构学习"
             description="从数据中学习变量间的依赖关系并构建贝叶斯网络"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
 
         {/* Section 14.4: 近似推断 */}
@@ -496,8 +499,9 @@ export default function Chapter14() {
           <DemoCard
             title="MCMC vs 变分推断"
             description="对比MCMC采样和变分推断在后验估计任务上的效果"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
 
         {/* Section 14.5: 话题模型 */}
@@ -572,8 +576,9 @@ export default function Chapter14() {
           <DemoCard
             title="LDA话题建模演示"
             description="在新闻文档集上运行LDA，可视化发现的话题和词分布"
-            status="开发中"
-          />
+          >
+            <p className="text-gray-400 text-center py-8">🚧 开发中...</p>
+          </DemoCard>
         </Section>
       </main>
     </div>
