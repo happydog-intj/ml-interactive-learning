@@ -5,6 +5,7 @@ import { ChapterHeader } from '@/components/ui/ChapterHeader'
 import { Section } from '@/components/ui/Section'
 import { InfoCard } from '@/components/ui/InfoCard'
 import { DemoCard } from '@/components/ui/DemoCard'
+import { RandomForestDemo } from '@/components/visualizations/RandomForestDemo'
 
 export default function Chapter8() {
   return (
@@ -338,18 +339,15 @@ export default function Chapter8() {
             </div>
           </InfoCard>
 
-          <DemoCard
-            title="随机森林可视化"
-            description="观察多棵决策树如何通过投票得到最终预测（开发中）"
-            icon="🌳"
-            gradient="from-ml-orange to-ml-green"
-          >
-            <div className="bg-ml-bg-dark rounded-xl p-12 border border-ml-border text-center">
-              <div className="text-6xl mb-4">🚧</div>
-              <p className="text-xl text-gray-100 mb-2">交互式演示开发中</p>
-              <p className="text-sm text-gray-100">将展示森林中每棵树的投票过程</p>
+          <div className="bg-ml-bg-card border-2 border-ml-green/30 rounded-xl p-6">
+            <div className="mb-4">
+              <h3 className="text-xl font-bold text-ml-green mb-2">随机森林交互演示</h3>
+              <p className="text-sm text-gray-100">
+                观察多棵决策树如何通过投票机制得到最终预测，理解特征随机和样本随机的作用
+              </p>
             </div>
-          </DemoCard>
+            <RandomForestDemo />
+          </div>
         </Section>
 
         {/* 8.4 结合策略 */}
