@@ -2,6 +2,8 @@
 
 import { useState, useEffect, useRef } from 'react'
 import * as d3 from 'd3'
+import { DatasetSelector } from '@/components/ui/DatasetSelector'
+import { allDatasets, DatasetName } from '@/lib/datasets'
 
 interface DataPoint {
   x1: number
@@ -11,35 +13,49 @@ interface DataPoint {
 
 export function LogisticRegressionDemo() {
   const svgRef = useRef<SVGSVGElement>(null)
+  const [selectedDataset, setSelectedDataset] = useState<DatasetName>('iris')
+  const [useRealData, setUseRealData] = useState(false)
   const [data, setData] = useState<DataPoint[]>([])
   const [w1, setW1] = useState(1)
   const [w2, setW2] = useState(1)
   const [b, setB] = useState(0)
 
-  // 生成二分类数据
+  // 生成或加载数据
   useEffect(() => {
-    const points: DataPoint[] = []
+    if (useRealData) {
+      // 使用真实数据集
+      const dataset = allDatasets[selectedDataset]
+      const points: DataPoint[] = dataset.data.map((point, idx) => ({
+        x1: point[0],
+        x2: point[1],
+        label: dataset.labels[idx]
+      }))
+      setData(points)
+    } else {
+      // 生成合成二分类数据
+      const points: DataPoint[] = []
 
-    // 类别 0 (左下)
-    for (let i = 0; i < 30; i++) {
-      points.push({
-        x1: Math.random() * 4 + 1,
-        x2: Math.random() * 4 + 1,
-        label: 0
-      })
+      // 类别 0 (左下)
+      for (let i = 0; i < 30; i++) {
+        points.push({
+          x1: Math.random() * 4 + 1,
+          x2: Math.random() * 4 + 1,
+          label: 0
+        })
+      }
+
+      // 类别 1 (右上)
+      for (let i = 0; i < 30; i++) {
+        points.push({
+          x1: Math.random() * 4 + 5,
+          x2: Math.random() * 4 + 5,
+          label: 1
+        })
+      }
+
+      setData(points)
     }
-
-    // 类别 1 (右上)
-    for (let i = 0; i < 30; i++) {
-      points.push({
-        x1: Math.random() * 4 + 5,
-        x2: Math.random() * 4 + 5,
-        label: 1
-      })
-    }
-
-    setData(points)
-  }, [])
+  }, [selectedDataset, useRealData])
 
   // Sigmoid 函数
   const sigmoid = (z: number) => 1 / (1 + Math.exp(-z))
@@ -82,28 +98,45 @@ export function LogisticRegressionDemo() {
     const innerWidth = width - margin.left - margin.right
     const innerHeight = height - margin.top - margin.bottom
 
+    // Dynamic domain based on data
+    const x1Values = data.map(d => d.x1)
+    const x2Values = data.map(d => d.x2)
+    const x1Min = Math.min(...x1Values)
+    const x1Max = Math.max(...x1Values)
+    const x2Min = Math.min(...x2Values)
+    const x2Max = Math.max(...x2Values)
+
+    const x1Padding = (x1Max - x1Min) * 0.1 || 1
+    const x2Padding = (x2Max - x2Min) * 0.1 || 1
+
     // 坐标轴
     const xScale = d3.scaleLinear()
-      .domain([0, 10])
+      .domain([x1Min - x1Padding, x1Max + x1Padding])
       .range([0, innerWidth])
 
     const yScale = d3.scaleLinear()
-      .domain([0, 10])
+      .domain([x2Min - x2Padding, x2Max + x2Padding])
       .range([innerHeight, 0])
 
     // 绘制决策边界背景（概率热图）
     const resolution = 50
+    const x1Domain = xScale.domain()
+    const x2Domain = yScale.domain()
+
     for (let i = 0; i < resolution; i++) {
       for (let j = 0; j < resolution; j++) {
-        const x1 = (i / resolution) * 10
-        const x2 = (j / resolution) * 10
+        const x1 = x1Domain[0] + (i / resolution) * (x1Domain[1] - x1Domain[0])
+        const x2 = x2Domain[0] + (j / resolution) * (x2Domain[1] - x2Domain[0])
         const prob = predict(x1, x2)
 
         const color = d3.interpolateRdYlBu(1 - prob)
 
+        const cellWidth = (x1Domain[1] - x1Domain[0]) / resolution
+        const cellHeight = (x2Domain[1] - x2Domain[0]) / resolution
+
         g.append('rect')
           .attr('x', xScale(x1))
-          .attr('y', yScale(x2 + 10/resolution))
+          .attr('y', yScale(x2 + cellHeight))
           .attr('width', innerWidth / resolution)
           .attr('height', innerHeight / resolution)
           .attr('fill', color)
@@ -113,8 +146,8 @@ export function LogisticRegressionDemo() {
 
     // 绘制决策边界线 (w1*x1 + w2*x2 + b = 0)
     if (Math.abs(w2) > 0.01) {
-      const x1_start = 0
-      const x1_end = 10
+      const x1_start = x1Domain[0]
+      const x1_end = x1Domain[1]
       const x2_start = -(w1 * x1_start + b) / w2
       const x2_end = -(w1 * x1_end + b) / w2
 
@@ -190,20 +223,45 @@ export function LogisticRegressionDemo() {
   const accuracy = calculateAccuracy()
 
   return (
-    <div className="bg-ml-bg-secondary p-6 rounded-lg">
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* 主图表 */}
-        <div className="lg:col-span-2">
-          <div className="flex justify-center bg-ml-bg-dark rounded-lg p-4">
-            <svg ref={svgRef} />
-          </div>
+    <div className="space-y-6">
+      {/* Dataset Selection */}
+      <div className="bg-ml-bg-secondary rounded-xl p-6 border border-ml-border">
+        <div className="flex items-center justify-between mb-4">
+          <h3 className="text-lg font-bold text-white">数据来源</h3>
+          <button
+            onClick={() => setUseRealData(!useRealData)}
+            className={`px-4 py-2 rounded-lg font-semibold transition-all duration-300 ${
+              useRealData
+                ? 'bg-gradient-to-r from-ml-cyan to-ml-blue text-white'
+                : 'bg-ml-bg-dark text-gray-100 border border-ml-border'
+            }`}
+          >
+            {useRealData ? '真实数据集' : '合成数据'}
+          </button>
         </div>
 
-        {/* 控制面板 */}
-        <div className="space-y-6">
-          {/* 模型参数 */}
-          <div className="bg-ml-bg-dark p-4 rounded-lg">
-            <h3 className="text-lg font-semibold mb-4 text-ml-blue">模型参数</h3>
+        {useRealData && (
+          <DatasetSelector
+            selectedDataset={selectedDataset}
+            onDatasetChange={setSelectedDataset}
+          />
+        )}
+      </div>
+
+      <div className="bg-ml-bg-secondary p-6 rounded-lg">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+          {/* 主图表 */}
+          <div className="lg:col-span-2">
+            <div className="flex justify-center bg-ml-bg-dark rounded-lg p-4">
+              <svg ref={svgRef} />
+            </div>
+          </div>
+
+          {/* 控制面板 */}
+          <div className="space-y-6">
+            {/* 模型参数 */}
+            <div className="bg-ml-bg-dark p-4 rounded-lg">
+              <h3 className="text-lg font-semibold mb-4 text-ml-blue">模型参数</h3>
 
             <div className="space-y-4">
               <div>
@@ -322,6 +380,7 @@ export function LogisticRegressionDemo() {
           🎨 <strong>背景颜色</strong>表示分类概率：红色区域倾向于类别0，蓝色区域倾向于类别1。
           调整参数观察决策边界如何移动。
         </p>
+      </div>
       </div>
     </div>
   )
