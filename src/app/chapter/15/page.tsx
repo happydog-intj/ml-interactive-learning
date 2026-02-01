@@ -27,7 +27,6 @@ export default function Chapter15() {
 
         {/* Section 15.1: 基本概念 */}
         <Section
-          id="basic-concepts"
           number="15.1"
           title="基本概念"
         >
@@ -121,7 +120,6 @@ export default function Chapter15() {
 
         {/* Section 15.2: 序贯覆盖 */}
         <Section
-          id="sequential-covering"
           number="15.2"
           title="序贯覆盖"
         >
@@ -235,7 +233,6 @@ export default function Chapter15() {
 
         {/* Section 15.3: 剪枝优化 */}
         <Section
-          id="pruning-optimization"
           number="15.3"
           title="剪枝优化"
         >
@@ -331,7 +328,6 @@ export default function Chapter15() {
 
         {/* Section 15.4: 一阶规则学习 */}
         <Section
-          id="first-order-rule-learning"
           number="15.4"
           title="一阶规则学习"
         >
@@ -445,7 +441,6 @@ export default function Chapter15() {
 
         {/* Section 15.5: 规则集学习 */}
         <Section
-          id="rule-set-learning"
           number="15.5"
           title="规则集学习"
         >

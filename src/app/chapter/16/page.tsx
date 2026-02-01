@@ -27,7 +27,6 @@ export default function Chapter16() {
 
         {/* Section 16.1: 任务与奖励 */}
         <Section
-          id="task-and-reward"
           number="16.1"
           title="任务与奖励"
         >
@@ -182,7 +181,6 @@ export default function Chapter16() {
 
         {/* Section 16.2: K-摇臂赌博机 */}
         <Section
-          id="k-armed-bandit"
           number="16.2"
           title="K-摇臂赌博机"
         >
@@ -293,7 +291,6 @@ export default function Chapter16() {
 
         {/* Section 16.3: 有模型学习 */}
         <Section
-          id="model-based-learning"
           number="16.3"
           title="有模型学习"
         >
@@ -413,7 +410,6 @@ export default function Chapter16() {
 
         {/* Section 16.4: 免模型学习 */}
         <Section
-          id="model-free-learning"
           number="16.4"
           title="免模型学习"
         >
@@ -520,7 +516,6 @@ export default function Chapter16() {
 
         {/* Section 16.5: 值函数逼近 */}
         <Section
-          id="value-function-approximation"
           number="16.5"
           title="值函数逼近"
         >
@@ -676,7 +671,6 @@ export default function Chapter16() {
 
         {/* Section 16.6: 模仿学习 */}
         <Section
-          id="imitation-learning"
           number="16.6"
           title="模仿学习"
         >

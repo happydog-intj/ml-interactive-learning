@@ -27,7 +27,6 @@ export default function Chapter12() {
 
         {/* Section 12.1: 基础知识 */}
         <Section
-          id="basics"
           number="12.1"
           title="基础知识"
         >
@@ -99,7 +98,6 @@ export default function Chapter12() {
 
         {/* Section 12.2: PAC学习 */}
         <Section
-          id="pac-learning"
           number="12.2"
           title="PAC学习"
         >
@@ -162,7 +160,6 @@ export default function Chapter12() {
 
         {/* Section 12.3: 有限假设空间 */}
         <Section
-          id="finite-hypothesis-space"
           number="12.3"
           title="有限假设空间"
         >
@@ -237,7 +234,6 @@ export default function Chapter12() {
 
         {/* Section 12.4: VC维 */}
         <Section
-          id="vc-dimension"
           number="12.4"
           title="VC维"
         >
@@ -331,7 +327,6 @@ export default function Chapter12() {
 
         {/* Section 12.5: Rademacher复杂度 */}
         <Section
-          id="rademacher-complexity"
           number="12.5"
           title="Rademacher复杂度"
         >
@@ -393,7 +388,6 @@ export default function Chapter12() {
 
         {/* Section 12.6: 稳定性 */}
         <Section
-          id="stability"
           number="12.6"
           title="稳定性"
         >

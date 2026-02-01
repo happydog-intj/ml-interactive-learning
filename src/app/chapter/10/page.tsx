@@ -27,7 +27,6 @@ export default function Chapter10() {
 
         {/* Section 10.1: k近邻学习 */}
         <Section
-          id="knn"
           number="10.1"
           title="k近邻学习"
         >
@@ -86,7 +85,6 @@ export default function Chapter10() {
 
         {/* Section 10.2: 低维嵌入 */}
         <Section
-          id="low-dim-embedding"
           number="10.2"
           title="低维嵌入"
         >
@@ -148,7 +146,6 @@ export default function Chapter10() {
 
         {/* Section 10.3: 主成分分析 */}
         <Section
-          id="pca"
           number="10.3"
           title="主成分分析"
         >
@@ -232,7 +229,6 @@ export default function Chapter10() {
 
         {/* Section 10.4: 核化线性降维 */}
         <Section
-          id="kernel-pca"
           number="10.4"
           title="核化线性降维"
         >
@@ -279,7 +275,6 @@ export default function Chapter10() {
 
         {/* Section 10.5: 流形学习 */}
         <Section
-          id="manifold-learning"
           number="10.5"
           title="流形学习"
         >
@@ -342,7 +337,6 @@ export default function Chapter10() {
 
         {/* Section 10.6: 度量学习 */}
         <Section
-          id="metric-learning"
           number="10.6"
           title="度量学习"
         >

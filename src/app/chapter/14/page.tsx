@@ -26,7 +26,6 @@ export default function Chapter14() {
 
         {/* Section 14.1: 隐马尔可夫模型 */}
         <Section
-          id="hmm"
           number="14.1"
           title="隐马尔可夫模型"
         >
@@ -151,7 +150,6 @@ export default function Chapter14() {
 
         {/* Section 14.2: 马尔可夫随机场 */}
         <Section
-          id="mrf"
           number="14.2"
           title="马尔可夫随机场"
         >
@@ -275,7 +273,6 @@ export default function Chapter14() {
 
         {/* Section 14.3: 学习与推断 */}
         <Section
-          id="learning-inference"
           number="14.3"
           title="学习与推断"
         >
@@ -404,7 +401,6 @@ export default function Chapter14() {
 
         {/* Section 14.4: 近似推断 */}
         <Section
-          id="approximate-inference"
           number="14.4"
           title="近似推断"
         >
@@ -506,7 +502,6 @@ export default function Chapter14() {
 
         {/* Section 14.5: 话题模型 */}
         <Section
-          id="topic-models"
           number="14.5"
           title="话题模型"
         >

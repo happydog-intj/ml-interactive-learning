@@ -27,7 +27,6 @@ export default function Chapter9() {
 
         {/* Section 9.1: 聚类任务 */}
         <Section
-          id="clustering-task"
           number="9.1"
           title="聚类任务"
         >
@@ -82,7 +81,6 @@ export default function Chapter9() {
 
         {/* Section 9.2: 原型聚类 */}
         <Section
-          id="prototype-clustering"
           number="9.2"
           title="原型聚类"
         >
@@ -182,7 +180,6 @@ export default function Chapter9() {
 
         {/* Section 9.3: 密度聚类 */}
         <Section
-          id="density-clustering"
           number="9.3"
           title="密度聚类"
         >
@@ -243,7 +240,6 @@ export default function Chapter9() {
 
         {/* Section 9.4: 层次聚类 */}
         <Section
-          id="hierarchical-clustering"
           number="9.4"
           title="层次聚类"
         >
@@ -301,7 +297,6 @@ export default function Chapter9() {
 
         {/* Section 9.5: 谱聚类 */}
         <Section
-          id="spectral-clustering"
           number="9.5"
           title="谱聚类"
         >

@@ -27,7 +27,6 @@ export default function Chapter13() {
 
         {/* Section 13.1: 未标记样本 */}
         <Section
-          id="unlabeled-data"
           number="13.1"
           title="未标记样本"
         >
@@ -115,7 +114,6 @@ export default function Chapter13() {
 
         {/* Section 13.2: 生成式方法 */}
         <Section
-          id="generative-methods"
           number="13.2"
           title="生成式方法"
         >
@@ -163,7 +161,6 @@ export default function Chapter13() {
 
         {/* Section 13.3: 半监督SVM */}
         <Section
-          id="semi-supervised-svm"
           number="13.3"
           title="半监督SVM"
         >
@@ -224,7 +221,6 @@ export default function Chapter13() {
 
         {/* Section 13.4: 图半监督学习 */}
         <Section
-          id="graph-ssl"
           number="13.4"
           title="图半监督学习"
         >
@@ -336,7 +332,6 @@ export default function Chapter13() {
 
         {/* Section 13.5: 分歧方法 */}
         <Section
-          id="disagreement-methods"
           number="13.5"
           title="分歧方法"
         >
@@ -432,7 +427,6 @@ export default function Chapter13() {
 
         {/* Section 13.6: 半监督聚类 */}
         <Section
-          id="semi-supervised-clustering"
           number="13.6"
           title="半监督聚类"
         >

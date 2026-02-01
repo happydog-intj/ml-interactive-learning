@@ -27,7 +27,6 @@ export default function Chapter11() {
 
         {/* Section 11.1: 子集搜索与评价 */}
         <Section
-          id="subset-search"
           number="11.1"
           title="子集搜索与评价"
         >
@@ -114,7 +113,6 @@ export default function Chapter11() {
 
         {/* Section 11.2: 过滤式选择 */}
         <Section
-          id="filter-selection"
           number="11.2"
           title="过滤式选择"
         >
@@ -178,7 +176,6 @@ export default function Chapter11() {
 
         {/* Section 11.3: 包裹式选择 */}
         <Section
-          id="wrapper-selection"
           number="11.3"
           title="包裹式选择"
         >
@@ -249,7 +246,6 @@ export default function Chapter11() {
 
         {/* Section 11.4: 嵌入式选择与L1正则化 */}
         <Section
-          id="embedded-selection"
           number="11.4"
           title="嵌入式选择与L1正则化"
         >
@@ -347,7 +343,6 @@ export default function Chapter11() {
 
         {/* Section 11.5: 稀疏表示与字典学习 */}
         <Section
-          id="sparse-representation"
           number="11.5"
           title="稀疏表示与字典学习"
         >
@@ -431,7 +426,6 @@ export default function Chapter11() {
 
         {/* Section 11.6: 压缩感知 */}
         <Section
-          id="compressed-sensing"
           number="11.6"
           title="压缩感知"
         >
