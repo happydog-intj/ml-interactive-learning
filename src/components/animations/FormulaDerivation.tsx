@@ -252,22 +252,22 @@ export function ROCFormulaDerivation() {
             <div className="cell-tp bg-green-900/20 border-2 border-gray-700 rounded-lg p-6 text-center transition-all">
               <div className="text-3xl font-bold text-green-400 mb-2">TP</div>
               <div className="text-sm text-white">真正例</div>
-              <div className="text-xs text-gray-300 mt-1">True Positive</div>
+              <div className="text-xs text-gray-100 mt-1">True Positive</div>
             </div>
             <div className="cell-fp bg-red-900/20 border-2 border-gray-700 rounded-lg p-6 text-center transition-all">
               <div className="text-3xl font-bold text-red-400 mb-2">FP</div>
               <div className="text-sm text-white">假正例</div>
-              <div className="text-xs text-gray-300 mt-1">False Positive</div>
+              <div className="text-xs text-gray-100 mt-1">False Positive</div>
             </div>
             <div className="cell-fn bg-red-900/20 border-2 border-gray-700 rounded-lg p-6 text-center transition-all">
               <div className="text-3xl font-bold text-red-400 mb-2">FN</div>
               <div className="text-sm text-white">假负例</div>
-              <div className="text-xs text-gray-300 mt-1">False Negative</div>
+              <div className="text-xs text-gray-100 mt-1">False Negative</div>
             </div>
             <div className="cell-tn bg-green-900/20 border-2 border-gray-700 rounded-lg p-6 text-center transition-all">
               <div className="text-3xl font-bold text-green-400 mb-2">TN</div>
               <div className="text-sm text-white">真负例</div>
-              <div className="text-xs text-gray-300 mt-1">True Negative</div>
+              <div className="text-xs text-gray-100 mt-1">True Negative</div>
             </div>
           </div>
         </div>

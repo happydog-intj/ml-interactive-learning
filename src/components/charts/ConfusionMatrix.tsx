@@ -30,14 +30,14 @@ export function ConfusionMatrix({ tp, fp, tn, fn, className = '' }: ConfusionMat
         <div className="bg-green-900/30 border-2 border-green-500 p-4 rounded-lg text-center">
           <div className="text-3xl font-bold text-green-400">{tp}</div>
           <div className="text-xs text-white mt-1">真正例 (TP)</div>
-          <div className="text-xs text-gray-300 mt-1">
+          <div className="text-xs text-gray-100 mt-1">
             {total > 0 ? `${((tp / total) * 100).toFixed(1)}%` : '0%'}
           </div>
         </div>
         <div className="bg-red-900/30 border-2 border-red-500 p-4 rounded-lg text-center">
           <div className="text-3xl font-bold text-red-400">{fn}</div>
           <div className="text-xs text-white mt-1">假负例 (FN)</div>
-          <div className="text-xs text-gray-300 mt-1">
+          <div className="text-xs text-gray-100 mt-1">
             {total > 0 ? `${((fn / total) * 100).toFixed(1)}%` : '0%'}
           </div>
         </div>
@@ -51,14 +51,14 @@ export function ConfusionMatrix({ tp, fp, tn, fn, className = '' }: ConfusionMat
         <div className="bg-red-900/30 border-2 border-red-500 p-4 rounded-lg text-center">
           <div className="text-3xl font-bold text-red-400">{fp}</div>
           <div className="text-xs text-white mt-1">假正例 (FP)</div>
-          <div className="text-xs text-gray-300 mt-1">
+          <div className="text-xs text-gray-100 mt-1">
             {total > 0 ? `${((fp / total) * 100).toFixed(1)}%` : '0%'}
           </div>
         </div>
         <div className="bg-green-900/30 border-2 border-green-500 p-4 rounded-lg text-center">
           <div className="text-3xl font-bold text-green-400">{tn}</div>
           <div className="text-xs text-white mt-1">真负例 (TN)</div>
-          <div className="text-xs text-gray-300 mt-1">
+          <div className="text-xs text-gray-100 mt-1">
             {total > 0 ? `${((tn / total) * 100).toFixed(1)}%` : '0%'}
           </div>
         </div>

@@ -108,22 +108,22 @@ export default function Chapter2() {
                 <div className="bg-green-900/20 border-2 border-green-500 p-4 rounded text-center">
                   <div className="text-2xl font-bold text-green-400">TP</div>
                   <div className="text-sm text-white mt-1">真正例</div>
-                  <div className="text-xs text-gray-300">正确预测为正</div>
+                  <div className="text-xs text-gray-100">正确预测为正</div>
                 </div>
                 <div className="bg-red-900/20 border-2 border-red-500 p-4 rounded text-center">
                   <div className="text-2xl font-bold text-red-400">FP</div>
                   <div className="text-sm text-white mt-1">假正例</div>
-                  <div className="text-xs text-gray-300">错误预测为正</div>
+                  <div className="text-xs text-gray-100">错误预测为正</div>
                 </div>
                 <div className="bg-red-900/20 border-2 border-red-500 p-4 rounded text-center">
                   <div className="text-2xl font-bold text-red-400">FN</div>
                   <div className="text-sm text-white mt-1">假负例</div>
-                  <div className="text-xs text-gray-300">错误预测为负</div>
+                  <div className="text-xs text-gray-100">错误预测为负</div>
                 </div>
                 <div className="bg-green-900/20 border-2 border-green-500 p-4 rounded text-center">
                   <div className="text-2xl font-bold text-green-400">TN</div>
                   <div className="text-sm text-white mt-1">真负例</div>
-                  <div className="text-xs text-gray-300">正确预测为负</div>
+                  <div className="text-xs text-gray-100">正确预测为负</div>
                 </div>
               </div>
               <p className="text-white text-sm italic text-center">

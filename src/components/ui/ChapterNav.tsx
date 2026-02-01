@@ -17,7 +17,7 @@ export function ChapterNav({ prevChapter, nextChapter, currentChapter, totalChap
           {prevChapter ? (
             <Link
               href={prevChapter.href}
-              className="text-white hover:text-gray-200 transition-colors flex items-center gap-2"
+              className="text-white hover:text-gray-100 transition-colors flex items-center gap-2"
             >
               <span className="text-xl">←</span>
               <span>上一章</span>
@@ -41,7 +41,7 @@ export function ChapterNav({ prevChapter, nextChapter, currentChapter, totalChap
           {nextChapter ? (
             <Link
               href={nextChapter.href}
-              className="text-white hover:text-gray-200 transition-colors flex items-center gap-2"
+              className="text-white hover:text-gray-100 transition-colors flex items-center gap-2"
             >
               <span>下一章</span>
               <span className="text-xl">→</span>
