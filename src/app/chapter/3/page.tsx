@@ -2,6 +2,7 @@
 import { LinearRegressionDemo } from '@/components/visualizations/LinearRegressionDemo'
 import { GradientDescentViz } from '@/components/visualizations/GradientDescentViz'
 import { LogisticRegressionDemo } from '@/components/visualizations/LogisticRegressionDemo'
+import { LossSurface3D } from '@/components/visualizations/LossSurface3D'
 import { ChapterNav } from '@/components/ui/ChapterNav'
 import { ChapterHeader } from '@/components/ui/ChapterHeader'
 import { Section } from '@/components/ui/Section'
@@ -171,12 +172,21 @@ export default function Chapter3() {
           </div>
 
           <DemoCard
-            title="梯度下降可视化"
+            title="梯度下降可视化（2D）"
             description="调整学习率和初始位置，观察优化过程。红色虚线表示当前的梯度方向（损失函数的切线），紫色路径显示参数的更新轨迹。"
             icon="🎮"
             gradient="from-ml-cyan to-ml-blue"
           >
             <GradientDescentViz />
+          </DemoCard>
+
+          <DemoCard
+            title="3D损失曲面可视化"
+            description="探索不同损失函数的三维形状，观察梯度下降在3D空间中的优化轨迹。拖拽旋转视角，体验从简单凸优化到复杂地形的挑战。"
+            icon="🌐"
+            gradient="from-ml-blue via-ml-purple to-ml-cyan"
+          >
+            <LossSurface3D />
           </DemoCard>
         </Section>
 
