@@ -153,7 +153,7 @@ export function LineChart({
 
   return (
     <div className="flex justify-center">
-      <svg ref={svgRef} className="bg-gray-100 dark:bg-ml-bg-dark rounded" />
+      <svg ref={svgRef} className="bg-ml-bg-dark rounded" />
     </div>
   )
 }

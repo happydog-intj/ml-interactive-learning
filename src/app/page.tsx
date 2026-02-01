@@ -1,7 +1,6 @@
 'use client'
 
 import Link from 'next/link'
-import { ThemeToggle } from '@/components/ui/ThemeToggle'
 
 const chapters = [
   {
@@ -36,12 +35,7 @@ const chapters = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white dark:bg-ml-bg-dark text-gray-900 dark:text-white transition-colors">
-      {/* 主题切换按钮 */}
-      <div className="fixed top-4 right-4 z-50">
-        <ThemeToggle />
-      </div>
-
+    <main className="min-h-screen bg-ml-bg-dark text-white">
       <div className="container mx-auto px-4 py-16">
         <h1 className="text-5xl font-bold mb-6 text-center">
           机器学习
@@ -49,7 +43,7 @@ export default function Home() {
           教学
         </h1>
 
-        <p className="text-xl text-center text-gray-700 dark:text-white mb-12">
+        <p className="text-xl text-center text-gray-200 mb-12">
           基于周志华《机器学习》教材，用动画和交互理解每一个概念
         </p>
 
@@ -58,10 +52,10 @@ export default function Home() {
             <Link
               key={chapter.id}
               href={`/chapter/${chapter.id}`}
-              className={`bg-gray-100 dark:bg-ml-bg-secondary p-6 rounded-lg hover:scale-105 transition-all duration-200 hover:shadow-xl border-2 ${chapter.borderColor}`}
+              className={`bg-ml-bg-secondary p-6 rounded-lg hover:scale-105 transition-all duration-200 hover:shadow-xl border-2 ${chapter.borderColor}`}
             >
-              <h2 className="text-2xl font-bold mb-2">第{chapter.id}章</h2>
-              <h3 className="text-lg mb-3 text-gray-800 dark:text-white">{chapter.title}</h3>
+              <h2 className="text-2xl font-bold mb-2 text-white">第{chapter.id}章</h2>
+              <h3 className="text-lg mb-3 text-gray-100">{chapter.title}</h3>
               <span className={`text-sm px-3 py-1 rounded-full ${chapter.statusColor} font-medium`}>
                 {chapter.status}
               </span>

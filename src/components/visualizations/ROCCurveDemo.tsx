@@ -261,7 +261,7 @@ export function ROCCurveDemo() {
     : 0
 
   return (
-    <div className="bg-gray-50 dark:bg-ml-bg-secondary p-6 rounded-lg">
+    <div className="bg-ml-bg-secondary p-6 rounded-lg">
       {/* 控制面板 */}
       <div className="mb-6">
         <label className="block text-sm font-medium mb-2">
@@ -286,70 +286,70 @@ export function ROCCurveDemo() {
         {/* ROC 曲线图 */}
         <div className="lg:col-span-2">
           <div className="flex justify-center">
-            <svg ref={svgRef} className="bg-gray-100 dark:bg-ml-bg-dark rounded" />
+            <svg ref={svgRef} className="bg-ml-bg-dark rounded" />
           </div>
         </div>
 
         {/* 右侧信息面板 */}
         <div className="space-y-4">
           {/* 混淆矩阵 */}
-          <div className="bg-gray-100 dark:bg-ml-bg-dark p-4 rounded-lg">
+          <div className="bg-ml-bg-dark p-4 rounded-lg">
             <h3 className="text-lg font-semibold mb-3 text-ml-blue">混淆矩阵</h3>
             <div className="grid grid-cols-2 gap-2 text-center text-sm">
               <div className="bg-green-900/30 border border-green-500 p-3 rounded">
                 <div className="text-green-400 font-bold text-xl">{confusionMatrix.tp}</div>
-                <div className="text-xs text-gray-900 dark:text-white">真正例 (TP)</div>
+                <div className="text-xs text-white">真正例 (TP)</div>
               </div>
               <div className="bg-red-900/30 border border-red-500 p-3 rounded">
                 <div className="text-red-400 font-bold text-xl">{confusionMatrix.fp}</div>
-                <div className="text-xs text-gray-900 dark:text-white">假正例 (FP)</div>
+                <div className="text-xs text-white">假正例 (FP)</div>
               </div>
               <div className="bg-red-900/30 border border-red-500 p-3 rounded">
                 <div className="text-red-400 font-bold text-xl">{confusionMatrix.fn}</div>
-                <div className="text-xs text-gray-900 dark:text-white">假负例 (FN)</div>
+                <div className="text-xs text-white">假负例 (FN)</div>
               </div>
               <div className="bg-green-900/30 border border-green-500 p-3 rounded">
                 <div className="text-green-400 font-bold text-xl">{confusionMatrix.tn}</div>
-                <div className="text-xs text-gray-900 dark:text-white">真负例 (TN)</div>
+                <div className="text-xs text-white">真负例 (TN)</div>
               </div>
             </div>
           </div>
 
           {/* 评估指标 */}
-          <div className="bg-gray-100 dark:bg-ml-bg-dark p-4 rounded-lg">
+          <div className="bg-ml-bg-dark p-4 rounded-lg">
             <h3 className="text-lg font-semibold mb-3 text-ml-blue">评估指标</h3>
             <div className="space-y-2 text-sm">
               <div className="flex justify-between">
-                <span className="text-gray-900 dark:text-white">准确率 (Accuracy):</span>
+                <span className="text-white">准确率 (Accuracy):</span>
                 <span className="text-white font-bold">{(accuracy * 100).toFixed(1)}%</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-900 dark:text-white">精确率 (Precision):</span>
+                <span className="text-white">精确率 (Precision):</span>
                 <span className="text-white font-bold">{(precision * 100).toFixed(1)}%</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-900 dark:text-white">召回率 (Recall/TPR):</span>
+                <span className="text-white">召回率 (Recall/TPR):</span>
                 <span className="text-white font-bold">{(recall * 100).toFixed(1)}%</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-900 dark:text-white">F1 分数:</span>
+                <span className="text-white">F1 分数:</span>
                 <span className="text-white font-bold">{(f1Score * 100).toFixed(1)}%</span>
               </div>
               <div className="flex justify-between border-t border-gray-700 pt-2 mt-2">
-                <span className="text-gray-900 dark:text-white">FPR:</span>
+                <span className="text-white">FPR:</span>
                 <span className="text-white font-bold">{(currentPoint[0] * 100).toFixed(1)}%</span>
               </div>
             </div>
           </div>
 
           {/* 当前操作点 */}
-          <div className="bg-gray-100 dark:bg-ml-bg-dark p-4 rounded-lg">
+          <div className="bg-ml-bg-dark p-4 rounded-lg">
             <h3 className="text-lg font-semibold mb-2 text-yellow-500">当前操作点</h3>
             <div className="text-sm space-y-1">
-              <p className="text-gray-900 dark:text-white">
+              <p className="text-white">
                 TPR: <span className="text-white font-bold">{(currentPoint[1] * 100).toFixed(1)}%</span>
               </p>
-              <p className="text-gray-900 dark:text-white">
+              <p className="text-white">
                 FPR: <span className="text-white font-bold">{(currentPoint[0] * 100).toFixed(1)}%</span>
               </p>
             </div>
@@ -368,7 +368,7 @@ export function ROCCurveDemo() {
           表示当前阈值下的操作点，调整滑块可观察不同阈值对分类结果的影响
         </p>
         <p>
-          <strong className="text-gray-900 dark:text-white">灰色虚线</strong>:
+          <strong className="text-white">灰色虚线</strong>:
           表示随机猜测的性能基线（AUC = 0.5）
         </p>
       </div>

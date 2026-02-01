@@ -242,11 +242,11 @@ export function GradientDescentViz() {
   const currentGrad = gradient(currentX)
 
   return (
-    <div className="bg-gray-50 dark:bg-ml-bg-secondary p-6 rounded-lg">
+    <div className="bg-ml-bg-secondary p-6 rounded-lg">
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
         {/* 主图表 */}
         <div className="lg:col-span-3">
-          <div className="flex justify-center bg-gray-100 dark:bg-ml-bg-dark rounded-lg p-4">
+          <div className="flex justify-center bg-ml-bg-dark rounded-lg p-4">
             <svg ref={svgRef} />
           </div>
         </div>
@@ -254,30 +254,30 @@ export function GradientDescentViz() {
         {/* 控制面板 */}
         <div className="space-y-4">
           {/* 当前状态 */}
-          <div className="bg-gray-100 dark:bg-ml-bg-dark p-4 rounded-lg">
+          <div className="bg-ml-bg-dark p-4 rounded-lg">
             <h3 className="text-lg font-semibold mb-3 text-ml-blue">当前状态</h3>
             <div className="space-y-2 text-sm">
               <div className="flex justify-between">
-                <span className="text-gray-900 dark:text-white">迭代次数:</span>
+                <span className="text-white">迭代次数:</span>
                 <span className="text-white font-bold">{iteration}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-900 dark:text-white">参数 x:</span>
+                <span className="text-white">参数 x:</span>
                 <span className="text-yellow-400 font-bold">{currentX.toFixed(3)}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-900 dark:text-white">损失 L(x):</span>
+                <span className="text-white">损失 L(x):</span>
                 <span className="text-ml-blue font-bold">{currentLoss.toFixed(3)}</span>
               </div>
               <div className="flex justify-between">
-                <span className="text-gray-900 dark:text-white">梯度 ∂L/∂x:</span>
+                <span className="text-white">梯度 ∂L/∂x:</span>
                 <span className="text-red-400 font-bold">{currentGrad.toFixed(3)}</span>
               </div>
             </div>
           </div>
 
           {/* 学习率 */}
-          <div className="bg-gray-100 dark:bg-ml-bg-dark p-4 rounded-lg">
+          <div className="bg-ml-bg-dark p-4 rounded-lg">
             <label className="block text-sm font-medium mb-2">
               学习率 α: <span className="text-ml-blue">{learningRate.toFixed(2)}</span>
             </label>
@@ -297,7 +297,7 @@ export function GradientDescentViz() {
           </div>
 
           {/* 初始位置 */}
-          <div className="bg-gray-100 dark:bg-ml-bg-dark p-4 rounded-lg">
+          <div className="bg-ml-bg-dark p-4 rounded-lg">
             <label className="block text-sm font-medium mb-2">
               初始位置: <span className="text-yellow-400">{currentX.toFixed(1)}</span>
             </label>
@@ -341,19 +341,19 @@ export function GradientDescentViz() {
 
       {/* 说明 */}
       <div className="mt-6 grid md:grid-cols-4 gap-4 text-sm">
-        <div className="bg-gray-100 dark:bg-ml-bg-dark p-3 rounded">
+        <div className="bg-ml-bg-dark p-3 rounded">
           <span className="text-ml-blue font-bold">━ 蓝色曲线</span>
           <p className="text-white mt-1">损失函数 L(x) = (x-2)² + 1</p>
         </div>
-        <div className="bg-gray-100 dark:bg-ml-bg-dark p-3 rounded">
+        <div className="bg-ml-bg-dark p-3 rounded">
           <span className="text-yellow-500 font-bold">● 橙色圆点</span>
           <p className="text-white mt-1">当前参数位置</p>
         </div>
-        <div className="bg-gray-100 dark:bg-ml-bg-dark p-3 rounded">
+        <div className="bg-ml-bg-dark p-3 rounded">
           <span className="text-red-400 font-bold">━ ━ 红色虚线</span>
           <p className="text-white mt-1">当前梯度方向（切线）</p>
         </div>
-        <div className="bg-gray-100 dark:bg-ml-bg-dark p-3 rounded">
+        <div className="bg-ml-bg-dark p-3 rounded">
           <span className="text-purple-400 font-bold">· · · 紫色路径</span>
           <p className="text-white mt-1">优化轨迹</p>
         </div>
