@@ -12,10 +12,17 @@ export default function Chapter12() {
 
       <main className="container mx-auto px-6 py-12">
         <ChapterHeader
-          chapter={12}
+          chapterNumber={12}
           title="计算学习理论"
           subtitle="Computational Learning Theory"
-          description="从理论角度分析学习算法的能力、效率和样本复杂度"
+          icon="🎓"
+          gradient="from-ml-blue via-ml-purple to-ml-pink"
+          objectives={[
+            '理解PAC学习框架的基本概念',
+            '掌握VC维的定义和意义',
+            '了解样本复杂度和计算复杂度',
+            '理解泛化误差界和模型复杂度的关系'
+          ]}
         />
 
         {/* Section 12.1: 基础知识 */}

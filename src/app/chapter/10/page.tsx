@@ -12,10 +12,17 @@ export default function Chapter10() {
 
       <main className="container mx-auto px-6 py-12">
         <ChapterHeader
-          chapter={10}
+          chapterNumber={10}
           title="降维与度量学习"
           subtitle="Dimensionality Reduction and Metric Learning"
-          description="在高维数据中提取低维表示，并学习合适的距离度量"
+          icon="📉"
+          gradient="from-ml-purple via-ml-pink to-ml-red"
+          objectives={[
+            '理解降维的动机和高维数据的挑战',
+            '掌握PCA的原理和实现过程',
+            '了解度量学习的基本思想',
+            '理解流形学习的概念'
+          ]}
         />
 
         {/* Section 10.1: k近邻学习 */}

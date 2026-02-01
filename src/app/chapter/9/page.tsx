@@ -12,10 +12,17 @@ export default function Chapter9() {
 
       <main className="container mx-auto px-6 py-12">
         <ChapterHeader
-          chapter={9}
+          chapterNumber={9}
           title="聚类"
           subtitle="Clustering"
-          description="无监督学习的代表性任务，将样本划分为多个簇，使得簇内相似度高、簇间相似度低"
+          icon="🎯"
+          gradient="from-ml-cyan via-ml-blue to-ml-purple"
+          objectives={[
+            '理解聚类的基本概念和无监督学习的特点',
+            '掌握K-means算法的原理和实现',
+            '了解层次聚类和密度聚类的思想',
+            '理解聚类性能评估指标'
+          ]}
         />
 
         {/* Section 9.1: 聚类任务 */}

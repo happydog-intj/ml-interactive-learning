@@ -12,10 +12,17 @@ export default function Chapter16() {
 
       <main className="container mx-auto px-6 py-12">
         <ChapterHeader
-          chapter={16}
+          chapterNumber={16}
           title="强化学习"
           subtitle="Reinforcement Learning"
-          description="智能体通过与环境交互，学习最优策略以最大化累积奖励"
+          icon="🤖"
+          gradient="from-ml-red via-ml-orange to-ml-yellow"
+          objectives={[
+            '理解强化学习的基本概念：状态、动作、奖励、策略',
+            '掌握马尔可夫决策过程(MDP)的定义',
+            '理解值函数和Q函数的概念',
+            '了解Q-Learning和策略梯度方法'
+          ]}
         />
 
         {/* Section 16.1: 任务与奖励 */}

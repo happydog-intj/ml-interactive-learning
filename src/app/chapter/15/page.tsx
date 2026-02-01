@@ -12,10 +12,17 @@ export default function Chapter15() {
 
       <main className="container mx-auto px-6 py-12">
         <ChapterHeader
-          chapter={15}
+          chapterNumber={15}
           title="规则学习"
           subtitle="Rule Learning"
-          description="从数据中提取可解释的if-then规则，实现符号化知识表示"
+          icon="📏"
+          gradient="from-ml-yellow via-ml-orange to-ml-red"
+          objectives={[
+            '理解规则学习的基本概念和评价指标',
+            '掌握序贯覆盖算法的原理',
+            '理解规则剪枝和优化方法',
+            '了解归纳逻辑编程(ILP)的基本思想'
+          ]}
         />
 
         {/* Section 15.1: 基本概念 */}

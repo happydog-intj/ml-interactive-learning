@@ -11,10 +11,17 @@ export default function Chapter14() {
 
       <main className="container mx-auto px-6 py-12">
         <ChapterHeader
-          chapter={14}
+          chapterNumber={14}
           title="概率图模型"
           subtitle="Probabilistic Graphical Models"
-          description="用图结构表示变量间的概率依赖关系，实现高效的概率推断"
+          icon="🕸️"
+          gradient="from-ml-purple via-ml-blue to-ml-cyan"
+          objectives={[
+            '理解概率图模型的基本概念和表示',
+            '掌握隐马尔可夫模型的三个基本问题',
+            '理解贝叶斯网络的结构和推断',
+            '了解马尔可夫随机场和条件随机场'
+          ]}
         />
 
         {/* Section 14.1: 隐马尔可夫模型 */}

@@ -12,10 +12,17 @@ export default function Chapter11() {
 
       <main className="container mx-auto px-6 py-12">
         <ChapterHeader
-          chapter={11}
+          chapterNumber={11}
           title="特征选择与稀疏学习"
           subtitle="Feature Selection and Sparse Learning"
-          description="从众多特征中选择有用特征，或学习稀疏模型以提高泛化能力"
+          icon="✨"
+          gradient="from-ml-green via-ml-cyan to-ml-blue"
+          objectives={[
+            '理解特征选择的意义和方法分类',
+            '掌握过滤式、包裹式和嵌入式特征选择',
+            '理解L1正则化如何实现稀疏性',
+            '了解稀疏表示和字典学习'
+          ]}
         />
 
         {/* Section 11.1: 子集搜索与评价 */}

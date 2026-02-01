@@ -12,10 +12,17 @@ export default function Chapter13() {
 
       <main className="container mx-auto px-6 py-12">
         <ChapterHeader
-          chapter={13}
+          chapterNumber={13}
           title="半监督学习"
           subtitle="Semi-Supervised Learning"
-          description="利用少量标记样本和大量未标记样本进行学习"
+          icon="🎭"
+          gradient="from-ml-cyan via-ml-green to-ml-yellow"
+          objectives={[
+            '理解半监督学习的基本假设和动机',
+            '掌握自训练和协同训练方法',
+            '理解生成式和判别式半监督学习',
+            '了解图半监督学习和标签传播'
+          ]}
         />
 
         {/* Section 13.1: 未标记样本 */}
