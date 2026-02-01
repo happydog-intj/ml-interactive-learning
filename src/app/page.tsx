@@ -1,4 +1,10 @@
 import Link from 'next/link'
+import dynamic from 'next/dynamic'
+
+const ThemeToggle = dynamic(() => import('@/components/ui/ThemeToggle').then(mod => ({ default: mod.ThemeToggle })), {
+  ssr: false,
+  loading: () => <div className="w-9 h-9"></div>
+})
 
 const chapters = [
   {
@@ -33,27 +39,32 @@ const chapters = [
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-ml-bg-dark text-white">
+    <main className="min-h-screen bg-white dark:bg-ml-bg-dark text-gray-900 dark:text-white transition-colors">
+      {/* 主题切换按钮 */}
+      <div className="fixed top-4 right-4 z-50">
+        <ThemeToggle />
+      </div>
+
       <div className="container mx-auto px-4 py-16">
         <h1 className="text-5xl font-bold mb-6 text-center">
           机器学习
           <span className="text-ml-blue"> 交互式</span>
           教学
         </h1>
-        
-        <p className="text-xl text-center text-white mb-12">
+
+        <p className="text-xl text-center text-gray-700 dark:text-white mb-12">
           基于周志华《机器学习》教材，用动画和交互理解每一个概念
         </p>
-        
+
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {chapters.map(chapter => (
             <Link
               key={chapter.id}
               href={`/chapter/${chapter.id}`}
-              className={`bg-ml-bg-secondary p-6 rounded-lg hover:scale-105 transition-all duration-200 hover:shadow-xl border-2 ${chapter.borderColor}`}
+              className={`bg-gray-100 dark:bg-ml-bg-secondary p-6 rounded-lg hover:scale-105 transition-all duration-200 hover:shadow-xl border-2 ${chapter.borderColor}`}
             >
               <h2 className="text-2xl font-bold mb-2">第{chapter.id}章</h2>
-              <h3 className="text-lg mb-3 text-white">{chapter.title}</h3>
+              <h3 className="text-lg mb-3 text-gray-800 dark:text-white">{chapter.title}</h3>
               <span className={`text-sm px-3 py-1 rounded-full ${chapter.statusColor} font-medium`}>
                 {chapter.status}
               </span>

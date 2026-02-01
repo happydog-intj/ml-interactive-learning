@@ -190,11 +190,11 @@ export function LogisticRegressionDemo() {
   const accuracy = calculateAccuracy()
 
   return (
-    <div className="bg-ml-bg-secondary p-6 rounded-lg">
+    <div className="bg-gray-50 dark:bg-ml-bg-secondary p-6 rounded-lg">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* 主图表 */}
         <div className="lg:col-span-2">
-          <div className="flex justify-center bg-ml-bg-dark rounded-lg p-4">
+          <div className="flex justify-center bg-gray-100 dark:bg-ml-bg-dark rounded-lg p-4">
             <svg ref={svgRef} />
           </div>
         </div>
@@ -202,7 +202,7 @@ export function LogisticRegressionDemo() {
         {/* 控制面板 */}
         <div className="space-y-6">
           {/* 模型参数 */}
-          <div className="bg-ml-bg-dark p-4 rounded-lg">
+          <div className="bg-gray-100 dark:bg-ml-bg-dark p-4 rounded-lg">
             <h3 className="text-lg font-semibold mb-4 text-ml-blue">模型参数</h3>
 
             <div className="space-y-4">
@@ -261,27 +261,27 @@ export function LogisticRegressionDemo() {
           </div>
 
           {/* 性能指标 */}
-          <div className="bg-ml-bg-dark p-4 rounded-lg">
+          <div className="bg-gray-100 dark:bg-ml-bg-dark p-4 rounded-lg">
             <h3 className="text-lg font-semibold mb-4 text-ml-blue">分类性能</h3>
             <div className="text-center">
               <div className="text-4xl font-bold text-green-400 mb-2">
                 {accuracy.toFixed(1)}%
               </div>
-              <p className="text-sm text-white">准确率</p>
+              <p className="text-sm text-gray-900 dark:text-white">准确率</p>
             </div>
           </div>
 
           {/* Sigmoid 函数说明 */}
-          <div className="bg-ml-bg-dark p-4 rounded-lg">
+          <div className="bg-gray-100 dark:bg-ml-bg-dark p-4 rounded-lg">
             <h3 className="text-sm font-semibold mb-2 text-ml-yellow">Sigmoid 函数</h3>
             <p className="text-xs text-white mb-2 font-mono">
               σ(z) = 1 / (1 + e⁻ᶻ)
             </p>
-            <p className="text-xs text-white">
+            <p className="text-xs text-gray-900 dark:text-white">
               其中 z = w₁·x₁ + w₂·x₂ + b
             </p>
             <div className="mt-3 pt-3 border-t border-gray-700">
-              <p className="text-xs text-white">
+              <p className="text-xs text-gray-900 dark:text-white">
                 输出范围: (0, 1)<br/>
                 决策阈值: 0.5
               </p>
@@ -303,7 +303,7 @@ export function LogisticRegressionDemo() {
       </div>
 
       {/* 说明 */}
-      <div className="mt-6 p-4 bg-ml-bg-dark rounded-lg">
+      <div className="mt-6 p-4 bg-gray-100 dark:bg-ml-bg-dark rounded-lg">
         <div className="grid md:grid-cols-3 gap-4 text-sm">
           <div>
             <span className="text-green-400 font-bold">● 绿色圆点</span>

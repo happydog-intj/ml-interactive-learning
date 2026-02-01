@@ -231,11 +231,11 @@ export function LinearRegressionDemo() {
   }, [data, slope, intercept, showBestFit, bestFit])
 
   return (
-    <div className="bg-ml-bg-secondary p-6 rounded-lg">
+    <div className="bg-gray-50 dark:bg-ml-bg-secondary p-6 rounded-lg">
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
         {/* 主图表 */}
         <div className="lg:col-span-2">
-          <div className="flex justify-center bg-ml-bg-dark rounded-lg p-4">
+          <div className="flex justify-center bg-gray-100 dark:bg-ml-bg-dark rounded-lg p-4">
             <svg ref={svgRef} />
           </div>
         </div>
@@ -243,7 +243,7 @@ export function LinearRegressionDemo() {
         {/* 控制面板 */}
         <div className="space-y-6">
           {/* 参数调整 */}
-          <div className="bg-ml-bg-dark p-4 rounded-lg">
+          <div className="bg-gray-100 dark:bg-ml-bg-dark p-4 rounded-lg">
             <h3 className="text-lg font-semibold mb-4 text-ml-blue">模型参数</h3>
 
             <div className="space-y-4">
@@ -289,16 +289,16 @@ export function LinearRegressionDemo() {
           </div>
 
           {/* 损失函数 */}
-          <div className="bg-ml-bg-dark p-4 rounded-lg">
+          <div className="bg-gray-100 dark:bg-ml-bg-dark p-4 rounded-lg">
             <h3 className="text-lg font-semibold mb-4 text-ml-blue">损失函数 (MSE)</h3>
             <div className="space-y-3">
               <div className="flex justify-between items-center">
-                <span className="text-white">当前损失:</span>
+                <span className="text-gray-900 dark:text-white">当前损失:</span>
                 <span className="text-2xl font-bold text-ml-blue">{currentLoss.toFixed(2)}</span>
               </div>
               {showBestFit && (
                 <div className="flex justify-between items-center text-sm">
-                  <span className="text-white">最优损失:</span>
+                  <span className="text-gray-900 dark:text-white">最优损失:</span>
                   <span className="text-green-400 font-bold">{bestLoss.toFixed(2)}</span>
                 </div>
               )}
@@ -346,7 +346,7 @@ export function LinearRegressionDemo() {
       </div>
 
       {/* 说明 */}
-      <div className="mt-6 p-4 bg-ml-bg-dark rounded-lg">
+      <div className="mt-6 p-4 bg-gray-100 dark:bg-ml-bg-dark rounded-lg">
         <div className="grid md:grid-cols-3 gap-4 text-sm">
           <div>
             <span className="text-yellow-500 font-bold">● 橙色圆点</span>

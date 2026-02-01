@@ -12,7 +12,7 @@ export function ConfusionMatrix({ tp, fp, tn, fn, className = '' }: ConfusionMat
   const total = tp + fp + tn + fn
 
   return (
-    <div className={`bg-ml-bg-secondary p-6 rounded-lg ${className}`}>
+    <div className={`bg-gray-50 dark:bg-ml-bg-secondary p-6 rounded-lg ${className}`}>
       <h3 className="text-lg font-semibold mb-4 text-ml-blue text-center">混淆矩阵</h3>
 
       {/* 标签行 */}
@@ -66,7 +66,7 @@ export function ConfusionMatrix({ tp, fp, tn, fn, className = '' }: ConfusionMat
 
       {/* 总计 */}
       <div className="mt-4 pt-4 border-t border-gray-700 text-center">
-        <p className="text-sm text-white">
+        <p className="text-sm text-gray-900 dark:text-white">
           总样本数: <span className="text-white font-bold">{total}</span>
         </p>
       </div>
