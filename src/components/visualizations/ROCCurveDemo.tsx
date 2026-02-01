@@ -70,6 +70,28 @@ export function ROCCurveDemo() {
     setAuc(aucValue)
   }, [data])
 
+  // 计算当前阈值下的混淆矩阵
+  const [confusionMatrix, setConfusionMatrix] = useState({ tp: 0, fp: 0, tn: 0, fn: 0 })
+  const [currentPoint, setCurrentPoint] = useState<[number, number]>([0, 0])
+
+  useEffect(() => {
+    if (data.length === 0) return
+
+    const totalPositive = data.filter(d => d.label === 1).length
+    const totalNegative = data.filter(d => d.label === 0).length
+
+    const tp = data.filter(d => d.score >= threshold && d.label === 1).length
+    const fp = data.filter(d => d.score >= threshold && d.label === 0).length
+    const tn = data.filter(d => d.score < threshold && d.label === 0).length
+    const fn = data.filter(d => d.score < threshold && d.label === 1).length
+
+    setConfusionMatrix({ tp, fp, tn, fn })
+
+    const tpr = tp / totalPositive
+    const fpr = fp / totalNegative
+    setCurrentPoint([fpr, tpr])
+  }, [data, threshold])
+
   // 绘制 ROC 曲线
   useEffect(() => {
     if (!svgRef.current || rocPoints.length === 0) return
@@ -122,6 +144,22 @@ export function ROCCurveDemo() {
       .attr('fill', '#FFFFFF')
       .text('真正例率 (TPR)')
 
+    // 网格线
+    g.append('g')
+      .attr('class', 'grid')
+      .attr('opacity', 0.1)
+      .call(d3.axisLeft(yScale).tickSize(-innerWidth).tickFormat(() => ''))
+      .selectAll('line')
+      .attr('stroke', '#FFFFFF')
+
+    g.append('g')
+      .attr('class', 'grid')
+      .attr('transform', `translate(0,${innerHeight})`)
+      .attr('opacity', 0.1)
+      .call(d3.axisBottom(xScale).tickSize(-innerHeight).tickFormat(() => ''))
+      .selectAll('line')
+      .attr('stroke', '#FFFFFF')
+
     // 对角线（随机猜测）
     g.append('line')
       .attr('x1', 0)
@@ -167,6 +205,36 @@ export function ROCCurveDemo() {
       .attr('opacity', 0.2)
       .attr('d', area)
 
+    // 当前操作点（根据阈值）
+    g.append('circle')
+      .attr('cx', xScale(currentPoint[0]))
+      .attr('cy', yScale(currentPoint[1]))
+      .attr('r', 6)
+      .attr('fill', '#F59E0B')
+      .attr('stroke', '#FFFFFF')
+      .attr('stroke-width', 2)
+
+    // 从操作点到坐标轴的辅助线
+    g.append('line')
+      .attr('x1', xScale(currentPoint[0]))
+      .attr('y1', yScale(currentPoint[1]))
+      .attr('x2', xScale(currentPoint[0]))
+      .attr('y2', innerHeight)
+      .attr('stroke', '#F59E0B')
+      .attr('stroke-dasharray', '3,3')
+      .attr('stroke-width', 1)
+      .attr('opacity', 0.6)
+
+    g.append('line')
+      .attr('x1', xScale(currentPoint[0]))
+      .attr('y1', yScale(currentPoint[1]))
+      .attr('x2', 0)
+      .attr('y2', yScale(currentPoint[1]))
+      .attr('stroke', '#F59E0B')
+      .attr('stroke-dasharray', '3,3')
+      .attr('stroke-width', 1)
+      .attr('opacity', 0.6)
+
     // AUC 文本
     g.append('text')
       .attr('x', innerWidth - 80)
@@ -176,7 +244,21 @@ export function ROCCurveDemo() {
       .attr('font-weight', 'bold')
       .text(`AUC = ${auc.toFixed(3)}`)
 
-  }, [rocPoints, auc])
+  }, [rocPoints, auc, threshold, currentPoint])
+
+  // 计算评估指标
+  const accuracy = data.length > 0
+    ? (confusionMatrix.tp + confusionMatrix.tn) / data.length
+    : 0
+  const precision = (confusionMatrix.tp + confusionMatrix.fp) > 0
+    ? confusionMatrix.tp / (confusionMatrix.tp + confusionMatrix.fp)
+    : 0
+  const recall = (confusionMatrix.tp + confusionMatrix.fn) > 0
+    ? confusionMatrix.tp / (confusionMatrix.tp + confusionMatrix.fn)
+    : 0
+  const f1Score = (precision + recall) > 0
+    ? 2 * (precision * recall) / (precision + recall)
+    : 0
 
   return (
     <div className="bg-ml-bg-secondary p-6 rounded-lg">
@@ -192,7 +274,7 @@ export function ROCCurveDemo() {
           step="0.01"
           value={threshold}
           onChange={(e) => setThreshold(Number(e.target.value))}
-          className="w-full"
+          className="w-full accent-ml-blue"
         />
         <div className="flex justify-between text-xs text-gray-400 mt-1">
           <span>0.00</span>
@@ -200,20 +282,94 @@ export function ROCCurveDemo() {
         </div>
       </div>
 
-      {/* ROC 曲线图 */}
-      <div className="flex justify-center">
-        <svg ref={svgRef} className="bg-ml-bg-dark rounded" />
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* ROC 曲线图 */}
+        <div className="lg:col-span-2">
+          <div className="flex justify-center">
+            <svg ref={svgRef} className="bg-ml-bg-dark rounded" />
+          </div>
+        </div>
+
+        {/* 右侧信息面板 */}
+        <div className="space-y-4">
+          {/* 混淆矩阵 */}
+          <div className="bg-ml-bg-dark p-4 rounded-lg">
+            <h3 className="text-lg font-semibold mb-3 text-ml-blue">混淆矩阵</h3>
+            <div className="grid grid-cols-2 gap-2 text-center text-sm">
+              <div className="bg-green-900/30 border border-green-500 p-3 rounded">
+                <div className="text-green-400 font-bold text-xl">{confusionMatrix.tp}</div>
+                <div className="text-xs text-gray-400">真正例 (TP)</div>
+              </div>
+              <div className="bg-red-900/30 border border-red-500 p-3 rounded">
+                <div className="text-red-400 font-bold text-xl">{confusionMatrix.fp}</div>
+                <div className="text-xs text-gray-400">假正例 (FP)</div>
+              </div>
+              <div className="bg-red-900/30 border border-red-500 p-3 rounded">
+                <div className="text-red-400 font-bold text-xl">{confusionMatrix.fn}</div>
+                <div className="text-xs text-gray-400">假负例 (FN)</div>
+              </div>
+              <div className="bg-green-900/30 border border-green-500 p-3 rounded">
+                <div className="text-green-400 font-bold text-xl">{confusionMatrix.tn}</div>
+                <div className="text-xs text-gray-400">真负例 (TN)</div>
+              </div>
+            </div>
+          </div>
+
+          {/* 评估指标 */}
+          <div className="bg-ml-bg-dark p-4 rounded-lg">
+            <h3 className="text-lg font-semibold mb-3 text-ml-blue">评估指标</h3>
+            <div className="space-y-2 text-sm">
+              <div className="flex justify-between">
+                <span className="text-gray-400">准确率 (Accuracy):</span>
+                <span className="text-white font-bold">{(accuracy * 100).toFixed(1)}%</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-400">精确率 (Precision):</span>
+                <span className="text-white font-bold">{(precision * 100).toFixed(1)}%</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-400">召回率 (Recall/TPR):</span>
+                <span className="text-white font-bold">{(recall * 100).toFixed(1)}%</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-400">F1 分数:</span>
+                <span className="text-white font-bold">{(f1Score * 100).toFixed(1)}%</span>
+              </div>
+              <div className="flex justify-between border-t border-gray-700 pt-2 mt-2">
+                <span className="text-gray-400">FPR:</span>
+                <span className="text-white font-bold">{(currentPoint[0] * 100).toFixed(1)}%</span>
+              </div>
+            </div>
+          </div>
+
+          {/* 当前操作点 */}
+          <div className="bg-ml-bg-dark p-4 rounded-lg">
+            <h3 className="text-lg font-semibold mb-2 text-yellow-500">当前操作点</h3>
+            <div className="text-sm space-y-1">
+              <p className="text-gray-300">
+                TPR: <span className="text-white font-bold">{(currentPoint[1] * 100).toFixed(1)}%</span>
+              </p>
+              <p className="text-gray-300">
+                FPR: <span className="text-white font-bold">{(currentPoint[0] * 100).toFixed(1)}%</span>
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
       {/* 说明文字 */}
-      <div className="mt-6 text-sm text-gray-300">
-        <p className="mb-2">
-          <strong className="text-ml-blue">AUC (Area Under Curve)</strong>: 
-          曲线下方面积，值越接近1，模型性能越好
+      <div className="mt-6 text-sm text-gray-300 space-y-2">
+        <p>
+          <strong className="text-ml-blue">AUC (Area Under Curve)</strong>:
+          曲线下方面积，值越接近1，模型性能越好。当前 AUC = {auc.toFixed(3)}
         </p>
         <p>
-          <strong className="text-ml-yellow">虚线</strong>: 
-          表示随机猜测的性能（AUC = 0.5）
+          <strong className="text-ml-yellow">橙色圆点</strong>:
+          表示当前阈值下的操作点，调整滑块可观察不同阈值对分类结果的影响
+        </p>
+        <p>
+          <strong className="text-gray-400">灰色虚线</strong>:
+          表示随机猜测的性能基线（AUC = 0.5）
         </p>
       </div>
     </div>
