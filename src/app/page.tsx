@@ -41,7 +41,7 @@ export default function Home() {
           教学
         </h1>
         
-        <p className="text-xl text-center text-gray-100 mb-12">
+        <p className="text-xl text-center text-white mb-12">
           基于周志华《机器学习》教材，用动画和交互理解每一个概念
         </p>
         
@@ -53,7 +53,7 @@ export default function Home() {
               className={`bg-ml-bg-secondary p-6 rounded-lg hover:scale-105 transition-all duration-200 hover:shadow-xl border-2 ${chapter.borderColor}`}
             >
               <h2 className="text-2xl font-bold mb-2">第{chapter.id}章</h2>
-              <h3 className="text-lg mb-3 text-gray-200">{chapter.title}</h3>
+              <h3 className="text-lg mb-3 text-white">{chapter.title}</h3>
               <span className={`text-sm px-3 py-1 rounded-full ${chapter.statusColor} font-medium`}>
                 {chapter.status}
               </span>

@@ -212,7 +212,7 @@ export function ROCFormulaDerivation() {
       {/* 标题 */}
       <div className="derivation-title text-center">
         <h2 className="text-2xl font-bold text-ml-blue">ROC 曲线核心指标推导</h2>
-        <p className="text-gray-200 mt-2">理解 TPR 和 FPR 的数学定义</p>
+        <p className="text-white mt-2">理解 TPR 和 FPR 的数学定义</p>
       </div>
 
       {/* 控制按钮 */}
@@ -246,27 +246,27 @@ export function ROCFormulaDerivation() {
 
       {/* 混淆矩阵可视化 */}
       <div className="confusion-visual">
-        <h3 className="text-lg font-semibold mb-4 text-center text-gray-100">混淆矩阵 (Confusion Matrix)</h3>
+        <h3 className="text-lg font-semibold mb-4 text-center text-white">混淆矩阵 (Confusion Matrix)</h3>
         <div className="max-w-md mx-auto">
           <div className="grid grid-cols-2 gap-4">
             <div className="cell-tp bg-green-900/20 border-2 border-gray-700 rounded-lg p-6 text-center transition-all">
               <div className="text-3xl font-bold text-green-400 mb-2">TP</div>
-              <div className="text-sm text-gray-200">真正例</div>
+              <div className="text-sm text-white">真正例</div>
               <div className="text-xs text-gray-500 mt-1">True Positive</div>
             </div>
             <div className="cell-fp bg-red-900/20 border-2 border-gray-700 rounded-lg p-6 text-center transition-all">
               <div className="text-3xl font-bold text-red-400 mb-2">FP</div>
-              <div className="text-sm text-gray-200">假正例</div>
+              <div className="text-sm text-white">假正例</div>
               <div className="text-xs text-gray-500 mt-1">False Positive</div>
             </div>
             <div className="cell-fn bg-red-900/20 border-2 border-gray-700 rounded-lg p-6 text-center transition-all">
               <div className="text-3xl font-bold text-red-400 mb-2">FN</div>
-              <div className="text-sm text-gray-200">假负例</div>
+              <div className="text-sm text-white">假负例</div>
               <div className="text-xs text-gray-500 mt-1">False Negative</div>
             </div>
             <div className="cell-tn bg-green-900/20 border-2 border-gray-700 rounded-lg p-6 text-center transition-all">
               <div className="text-3xl font-bold text-green-400 mb-2">TN</div>
-              <div className="text-sm text-gray-200">真负例</div>
+              <div className="text-sm text-white">真负例</div>
               <div className="text-xs text-gray-500 mt-1">True Negative</div>
             </div>
           </div>
@@ -281,13 +281,13 @@ export function ROCFormulaDerivation() {
           <div className="flex flex-col items-center">
             <div className="tpr-numerator text-green-400 font-bold mb-1">TP</div>
             <div className="tpr-fraction-line w-24 h-0.5 bg-white"></div>
-            <div className="tpr-denominator text-gray-100 mt-1">
+            <div className="tpr-denominator text-white mt-1">
               <span className="text-green-400">TP</span> + <span className="text-red-400">FN</span>
             </div>
           </div>
         </div>
         <div className="tpr-explanation opacity-0 translate-y-4">
-          <p className="text-center text-gray-200 text-sm">
+          <p className="text-center text-white text-sm">
             真正例率（True Positive Rate）= 正确识别的正例 / 全部正例
           </p>
           <p className="text-center text-ml-blue text-sm mt-2">
@@ -304,13 +304,13 @@ export function ROCFormulaDerivation() {
           <div className="flex flex-col items-center">
             <div className="fpr-numerator text-red-400 font-bold mb-1">FP</div>
             <div className="fpr-fraction-line w-24 h-0.5 bg-white"></div>
-            <div className="fpr-denominator text-gray-100 mt-1">
+            <div className="fpr-denominator text-white mt-1">
               <span className="text-red-400">FP</span> + <span className="text-green-400">TN</span>
             </div>
           </div>
         </div>
         <div className="fpr-explanation opacity-0 translate-y-4">
-          <p className="text-center text-gray-200 text-sm">
+          <p className="text-center text-white text-sm">
             假正例率（False Positive Rate）= 错误识别的负例 / 全部负例
           </p>
           <p className="text-center text-yellow-500 text-sm mt-2">
@@ -322,7 +322,7 @@ export function ROCFormulaDerivation() {
       {/* 关键洞察 */}
       <div className="key-insight bg-gradient-to-r from-ml-blue/20 to-purple-600/20 border-2 border-ml-blue/50 p-6 rounded-lg">
         <h3 className="text-xl font-bold text-ml-blue mb-3 text-center">🎯 关键洞察</h3>
-        <div className="space-y-3 text-gray-100">
+        <div className="space-y-3 text-white">
           <p className="flex items-start gap-2">
             <span className="text-green-400 font-bold flex-shrink-0">✓</span>
             <span><strong className="text-white">理想分类器</strong>：TPR → 1（尽可能捕获所有正例）</span>
