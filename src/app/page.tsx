@@ -38,11 +38,11 @@ const chapters = [
     id: 5,
     title: '神经网络',
     subtitle: 'Neural Networks',
-    status: '计划中',
+    status: '已完成',
     icon: '🧠',
     gradient: 'from-ml-red via-ml-orange to-ml-yellow',
     glowColor: 'shadow-[0_0_30px_rgba(255,51,102,0.3)]',
-    completionPercent: 0,
+    completionPercent: 100,
   },
 ]
 
