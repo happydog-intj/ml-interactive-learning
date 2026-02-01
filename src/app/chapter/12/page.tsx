@@ -3,6 +3,7 @@ import ChapterHeader from '@/components/layout/ChapterHeader'
 import Section from '@/components/layout/Section'
 import InfoCard from '@/components/ui/InfoCard'
 import DemoCard from '@/components/ui/DemoCard'
+import { VCDimensionDemo } from '@/components/visualizations/VCDimensionDemo'
 
 export default function Chapter12() {
   return (
@@ -312,11 +313,13 @@ export default function Chapter12() {
             </div>
           </InfoCard>
 
-          <DemoCard
-            title="VC维可视化"
-            description="演示二维线性分类器的VC维（打散3个点，无法打散XOR配置）"
-            status="开发中"
-          />
+          <div className="bg-ml-bg-card border-2 border-ml-cyan/30 rounded-xl p-6">
+            <h3 className="text-xl font-bold text-white mb-4">🎯 VC维交互演示</h3>
+            <p className="text-gray-300 mb-6">
+              通过放置点和调整标签，理解线性分类器的VC维（能打散3点，不能打散4点）
+            </p>
+            <VCDimensionDemo />
+          </div>
         </Section>
 
         {/* Section 12.5: Rademacher复杂度 */}

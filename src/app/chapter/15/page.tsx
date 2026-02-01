@@ -3,6 +3,7 @@ import ChapterHeader from '@/components/layout/ChapterHeader'
 import Section from '@/components/layout/Section'
 import InfoCard from '@/components/ui/InfoCard'
 import DemoCard from '@/components/ui/DemoCard'
+import { RuleLearningDemo } from '@/components/visualizations/RuleLearningDemo'
 
 export default function Chapter15() {
   return (
@@ -102,11 +103,13 @@ export default function Chapter15() {
             </div>
           </InfoCard>
 
-          <DemoCard
-            title="规则学习基础演示"
-            description="可视化规则的支持度、置信度等指标"
-            status="开发中"
-          />
+          <div className="bg-ml-bg-card border-2 border-ml-cyan/30 rounded-xl p-6">
+            <h3 className="text-xl font-bold text-white mb-4">📏 序贯覆盖规则学习</h3>
+            <p className="text-gray-300 mb-6">
+              演示如何从数据中学习IF-THEN规则，观察规则的覆盖率和准确率
+            </p>
+            <RuleLearningDemo />
+          </div>
         </Section>
 
         {/* Section 15.2: 序贯覆盖 */}

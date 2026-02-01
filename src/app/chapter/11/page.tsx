@@ -3,6 +3,7 @@ import ChapterHeader from '@/components/layout/ChapterHeader'
 import Section from '@/components/layout/Section'
 import InfoCard from '@/components/ui/InfoCard'
 import DemoCard from '@/components/ui/DemoCard'
+import { LassoPathDemo } from '@/components/visualizations/LassoPathDemo'
 
 export default function Chapter11() {
   return (
@@ -328,11 +329,13 @@ export default function Chapter11() {
             </div>
           </InfoCard>
 
-          <DemoCard
-            title="L1正则化稀疏性演示"
-            description="可视化L1和L2正则化对权重的影响，展示L1如何产生稀疏解"
-            status="开发中"
-          />
+          <div className="bg-ml-bg-card border-2 border-ml-cyan/30 rounded-xl p-6">
+            <h3 className="text-xl font-bold text-white mb-4">💎 LASSO正则化路径</h3>
+            <p className="text-gray-300 mb-6">
+              可视化L1正则化如何随着λ增大逐步将特征系数压缩至0，实现自动特征选择
+            </p>
+            <LassoPathDemo />
+          </div>
         </Section>
 
         {/* Section 11.5: 稀疏表示与字典学习 */}

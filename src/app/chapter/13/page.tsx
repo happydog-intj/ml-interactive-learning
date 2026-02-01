@@ -3,6 +3,7 @@ import ChapterHeader from '@/components/layout/ChapterHeader'
 import Section from '@/components/layout/Section'
 import InfoCard from '@/components/ui/InfoCard'
 import DemoCard from '@/components/ui/DemoCard'
+import { LabelPropagationDemo } from '@/components/visualizations/LabelPropagationDemo'
 
 export default function Chapter13() {
   return (
@@ -315,11 +316,15 @@ export default function Chapter13() {
             </div>
           </InfoCard>
 
-          <DemoCard
-            title="标签传播可视化"
-            description="动态展示标签如何从标记节点传播到未标记节点"
-            status="开发中"
-          />
+          <div className="bg-ml-bg-card border-2 border-ml-cyan/30 rounded-xl p-6">
+            <div className="mb-4">
+              <h3 className="text-xl font-bold text-ml-cyan mb-2">标签传播交互演示</h3>
+              <p className="text-sm text-gray-100">
+                在k近邻图上观察标签如何从少量标记节点传播到整个网络
+              </p>
+            </div>
+            <LabelPropagationDemo />
+          </div>
         </Section>
 
         {/* Section 13.5: 分歧方法 */}
