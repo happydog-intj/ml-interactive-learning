@@ -228,7 +228,7 @@ export default function Chapter7() {
 
         {/* 7.3 朴素贝叶斯分类器 */}
         <Section number="7.3" title="朴素贝叶斯分类器" gradient="from-ml-cyan to-ml-green">
-          <InfoCard title=""朴素"的假设" icon="🎭">
+          <InfoCard title="'朴素'的假设" icon="🎭">
             <p className="mb-4">
               朴素贝叶斯分类器基于一个强假设：
               <strong className="text-ml-yellow">属性条件独立性假设</strong>。
