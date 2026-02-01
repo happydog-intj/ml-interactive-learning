@@ -1,8 +1,8 @@
-import ChapterNav from '@/components/layout/ChapterNav'
-import ChapterHeader from '@/components/layout/ChapterHeader'
-import Section from '@/components/layout/Section'
-import InfoCard from '@/components/ui/InfoCard'
-import DemoCard from '@/components/ui/DemoCard'
+import { ChapterNav } from '@/components/ui/ChapterNav'
+import { ChapterHeader } from '@/components/ui/ChapterHeader'
+import { Section } from '@/components/ui/Section'
+import { InfoCard } from '@/components/ui/InfoCard'
+import { DemoCard } from '@/components/ui/DemoCard'
 import { PCAVisualization } from '@/components/visualizations/PCAVisualization'
 
 export default function Chapter10() {
