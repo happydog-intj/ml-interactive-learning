@@ -1,10 +1,34 @@
 import Link from 'next/link'
 
 const chapters = [
-  { id: 2, title: '模型评估与选择', status: '已完成', color: 'ml-blue' },
-  { id: 3, title: '线性模型', status: '开发中', color: 'ml-yellow' },
-  { id: 4, title: '决策树', status: '计划中', color: 'ml-purple' },
-  { id: 5, title: '神经网络', status: '计划中', color: 'ml-red' },
+  {
+    id: 2,
+    title: '模型评估与选择',
+    status: '已完成',
+    statusColor: 'bg-green-600/20 text-green-400',
+    borderColor: 'border-green-500'
+  },
+  {
+    id: 3,
+    title: '线性模型',
+    status: '已完成',
+    statusColor: 'bg-green-600/20 text-green-400',
+    borderColor: 'border-ml-blue'
+  },
+  {
+    id: 4,
+    title: '决策树',
+    status: '计划中',
+    statusColor: 'bg-purple-600/20 text-purple-400',
+    borderColor: 'border-purple-500'
+  },
+  {
+    id: 5,
+    title: '神经网络',
+    status: '计划中',
+    statusColor: 'bg-red-600/20 text-red-400',
+    borderColor: 'border-red-500'
+  },
 ]
 
 export default function Home() {
@@ -23,14 +47,14 @@ export default function Home() {
         
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
           {chapters.map(chapter => (
-            <Link 
+            <Link
               key={chapter.id}
               href={`/chapter/${chapter.id}`}
-              className={`bg-ml-bg-secondary p-6 rounded-lg hover:scale-105 transition-transform border-2 border-${chapter.color}`}
+              className={`bg-ml-bg-secondary p-6 rounded-lg hover:scale-105 transition-all duration-200 hover:shadow-xl border-2 ${chapter.borderColor}`}
             >
               <h2 className="text-2xl font-bold mb-2">第{chapter.id}章</h2>
-              <h3 className="text-lg mb-3">{chapter.title}</h3>
-              <span className={`text-sm px-2 py-1 rounded bg-${chapter.color}/20 text-${chapter.color}`}>
+              <h3 className="text-lg mb-3 text-gray-200">{chapter.title}</h3>
+              <span className={`text-sm px-3 py-1 rounded-full ${chapter.statusColor} font-medium`}>
                 {chapter.status}
               </span>
             </Link>

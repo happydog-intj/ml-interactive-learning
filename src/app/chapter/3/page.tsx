@@ -41,8 +41,8 @@ export default function Chapter3() {
             <span className="px-3 py-1 bg-ml-blue/20 text-ml-blue rounded-full text-sm font-semibold">
               第 3 章
             </span>
-            <span className="px-3 py-1 bg-yellow-600/20 text-yellow-400 rounded-full text-sm font-semibold">
-              🔄 开发中
+            <span className="px-3 py-1 bg-green-600/20 text-green-400 rounded-full text-sm font-semibold">
+              ✓ 已完成
             </span>
           </div>
           <h1 className="text-5xl font-bold mb-6 bg-gradient-to-r from-ml-blue to-purple-400 bg-clip-text text-transparent">
