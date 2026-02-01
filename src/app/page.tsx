@@ -1,10 +1,7 @@
-import Link from 'next/link'
-import dynamic from 'next/dynamic'
+'use client'
 
-const ThemeToggle = dynamic(() => import('@/components/ui/ThemeToggle').then(mod => ({ default: mod.ThemeToggle })), {
-  ssr: false,
-  loading: () => <div className="w-9 h-9"></div>
-})
+import Link from 'next/link'
+import { ThemeToggle } from '@/components/ui/ThemeToggle'
 
 const chapters = [
   {
