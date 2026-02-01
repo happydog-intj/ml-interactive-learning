@@ -3,6 +3,7 @@ import ChapterHeader from '@/components/layout/ChapterHeader'
 import Section from '@/components/layout/Section'
 import InfoCard from '@/components/ui/InfoCard'
 import DemoCard from '@/components/ui/DemoCard'
+import { QLearningDemo } from '@/components/visualizations/QLearningDemo'
 
 export default function Chapter16() {
   return (
@@ -161,11 +162,15 @@ export default function Chapter16() {
             </div>
           </InfoCard>
 
-          <DemoCard
-            title="GridWorld环境演示"
-            description="在网格世界中展示智能体与环境交互、获取奖励的过程"
-            status="开发中"
-          />
+          <div className="bg-ml-bg-card border-2 border-ml-purple/30 rounded-xl p-6">
+            <div className="mb-4">
+              <h3 className="text-xl font-bold text-ml-purple mb-2">Q-Learning网格世界演示</h3>
+              <p className="text-sm text-gray-100">
+                智能体在网格世界中学习找到最优路径，观察Q值的更新和策略的形成过程
+              </p>
+            </div>
+            <QLearningDemo />
+          </div>
         </Section>
 
         {/* Section 16.2: K-摇臂赌博机 */}

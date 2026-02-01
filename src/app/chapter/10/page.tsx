@@ -3,6 +3,7 @@ import ChapterHeader from '@/components/layout/ChapterHeader'
 import Section from '@/components/layout/Section'
 import InfoCard from '@/components/ui/InfoCard'
 import DemoCard from '@/components/ui/DemoCard'
+import { PCAVisualization } from '@/components/visualizations/PCAVisualization'
 
 export default function Chapter10() {
   return (
@@ -211,11 +212,15 @@ export default function Chapter10() {
             </div>
           </InfoCard>
 
-          <DemoCard
-            title="PCA交互演示"
-            description="可视化PCA降维过程、主成分方向和方差贡献率"
-            status="开发中"
-          />
+          <div className="bg-ml-bg-card border-2 border-ml-cyan/30 rounded-xl p-6">
+            <div className="mb-4">
+              <h3 className="text-xl font-bold text-ml-cyan mb-2">PCA降维交互演示</h3>
+              <p className="text-sm text-gray-100">
+                3D可视化PCA主成分分析，旋转视角观察数据分布和主成分方向
+              </p>
+            </div>
+            <PCAVisualization />
+          </div>
         </Section>
 
         {/* Section 10.4: 核化线性降维 */}
