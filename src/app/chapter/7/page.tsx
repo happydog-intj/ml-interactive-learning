@@ -5,6 +5,7 @@ import { ChapterHeader } from '@/components/ui/ChapterHeader'
 import { Section } from '@/components/ui/Section'
 import { InfoCard } from '@/components/ui/InfoCard'
 import { DemoCard } from '@/components/ui/DemoCard'
+import { NaiveBayesDemo } from '@/components/visualizations/NaiveBayesDemo'
 
 export default function Chapter7() {
   return (
@@ -314,18 +315,15 @@ export default function Chapter7() {
             </div>
           </InfoCard>
 
-          <DemoCard
-            title="朴素贝叶斯分类演示"
-            description="文本分类、垃圾邮件过滤等应用（开发中）"
-            icon="📧"
-            gradient="from-ml-cyan to-ml-green"
-          >
-            <div className="bg-ml-bg-dark rounded-xl p-12 border border-ml-border text-center">
-              <div className="text-6xl mb-4">🚧</div>
-              <p className="text-xl text-gray-100 mb-2">交互式演示开发中</p>
-              <p className="text-sm text-gray-100">将展示文本分类和垃圾邮件过滤</p>
+          <div className="bg-ml-bg-card border-2 border-ml-cyan/30 rounded-xl p-6">
+            <div className="mb-4">
+              <h3 className="text-xl font-bold text-ml-cyan mb-2">朴素贝叶斯分类交互演示</h3>
+              <p className="text-sm text-gray-100">
+                经典的"打网球"问题：根据天气条件预测是否适合打网球，理解贝叶斯公式的计算过程
+              </p>
             </div>
-          </DemoCard>
+            <NaiveBayesDemo />
+          </div>
         </Section>
 
         {/* 7.4 半朴素贝叶斯分类器 */}

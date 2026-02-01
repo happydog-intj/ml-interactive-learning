@@ -3,6 +3,7 @@ import ChapterHeader from '@/components/layout/ChapterHeader'
 import Section from '@/components/layout/Section'
 import InfoCard from '@/components/ui/InfoCard'
 import DemoCard from '@/components/ui/DemoCard'
+import { KMeansVisualization } from '@/components/visualizations/KMeansVisualization'
 
 export default function Chapter9() {
   return (
@@ -161,11 +162,15 @@ export default function Chapter9() {
             </p>
           </InfoCard>
 
-          <DemoCard
-            title="k-means与GMM交互演示"
-            description="对比k-means和GMM在不同数据分布上的聚类效果"
-            status="开发中"
-          />
+          <div className="bg-ml-bg-card border-2 border-ml-cyan/30 rounded-xl p-6">
+            <div className="mb-4">
+              <h3 className="text-xl font-bold text-ml-cyan mb-2">k-means聚类交互演示</h3>
+              <p className="text-sm text-gray-100">
+                通过交互式可视化理解k-means算法的迭代过程，观察质心如何移动以及簇如何形成
+              </p>
+            </div>
+            <KMeansVisualization />
+          </div>
         </Section>
 
         {/* Section 9.3: 密度聚类 */}
