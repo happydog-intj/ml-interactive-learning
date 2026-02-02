@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+Sitemap: https://ml-learning.yourdomain.com/sitemap.xml
+
+# 禁止爬取开发文件
+Disallow: /_next/
+Disallow: /api/
+Disallow: /*.json$
+Disallow: /*_buildManifest.js
+Disallow: /*_ssgManifest.js
+
+# 允许爬取静态资源
+Allow: /_next/static/
+
+# 搜索引擎特定配置
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# 爬取延迟（避免过载）
+Crawl-delay: 1
