@@ -1,0 +1,10 @@
+# Google Site Verification Placeholder
+# 
+# 待添加：从 Google Search Console 获取验证码后替换此文件
+# 或者使用 HTML meta 标签验证方式
+#
+# 步骤：
+# 1. 访问 https://search.google.com/search-console
+# 2. 添加网站: https://ml-interactive-learning.vercel.app
+# 3. 选择验证方式（推荐 HTML 标签或文件上传）
+# 4. 将验证信息发送给 AI 助手完成部署

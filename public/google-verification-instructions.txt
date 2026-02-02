@@ -1,0 +1,32 @@
+===========================================
+Google Search Console 提交指南
+网站: https://ml-interactive-learning.vercel.app
+===========================================
+
+第1步：访问 Google Search Console
+网址: https://search.google.com/search-console/welcome
+
+第2步：添加资源
+- 选择 "URL 前缀"
+- 输入: https://ml-interactive-learning.vercel.app
+- 点击 "继续"
+
+第3步：验证方式（推荐HTML标签）
+Google会显示类似这样的代码：
+<meta name="google-site-verification" content="您的验证码" />
+
+请把这一行发给AI助手，我会立即部署
+
+第4步：提交 Sitemap（验证后）
+在左侧菜单选择 "站点地图" (Sitemaps)
+输入: sitemap.xml
+点击 "提交"
+
+===========================================
+已准备就绪的内容：
+✅ robots.txt (已部署)
+✅ sitemap.xml (17页面)
+✅ 结构化数据 (Schema.org)
+✅ Open Graph 图片 (16张)
+✅ Meta 标签优化
+===========================================

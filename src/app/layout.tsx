@@ -118,6 +118,9 @@ export default function RootLayout({
   return (
     <html lang="zh-CN">
       <head>
+        {/* Google Search Console 验证 - 待添加验证码 */}
+        {/* <meta name="google-site-verification" content="YOUR_VERIFICATION_CODE" /> */}
+        
         {/* 结构化数据 - 教育组织 */}
         <script
           type="application/ld+json"
