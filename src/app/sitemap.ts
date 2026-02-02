@@ -1,7 +1,7 @@
 import { MetadataRoute } from 'next'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://ml-learning.yourdomain.com'
+  const baseUrl = 'https://ml-interactive-learning.vercel.app'
   
   // 章节列表
   const chapters = [

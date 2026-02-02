@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://ml-learning.yourdomain.com'),
+  metadataBase: new URL('https://ml-interactive-learning.vercel.app'),
   title: {
     default: '机器学习交互式学习平台 - ML Interactive Learning',
     template: '%s | ML Interactive Learning'
@@ -26,7 +26,7 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     locale: 'zh_CN',
-    url: 'https://ml-learning.yourdomain.com',
+    url: 'https://ml-interactive-learning.vercel.app',
     siteName: 'ML Interactive Learning',
     title: '机器学习交互式学习平台',
     description: '通过交互式可视化深入理解机器学习核心概念',
@@ -58,7 +58,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: 'https://ml-learning.yourdomain.com',
+    canonical: 'https://ml-interactive-learning.vercel.app',
   },
 };
 
@@ -73,7 +73,7 @@ export default function RootLayout({
     "@type": "EducationalOrganization",
     "name": "机器学习交互式学习平台",
     "alternateName": "ML Interactive Learning",
-    "url": "https://ml-learning.yourdomain.com",
+    "url": "https://ml-interactive-learning.vercel.app",
     "description": "基于《机器学习》（周志华）的交互式学习平台，通过可视化和动画深入理解机器学习核心概念",
     "founder": {
       "@type": "Organization",
@@ -104,13 +104,13 @@ export default function RootLayout({
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "url": "https://ml-learning.yourdomain.com",
+    "url": "https://ml-interactive-learning.vercel.app",
     "name": "机器学习交互式学习平台",
     "description": "通过可视化和动画深入理解机器学习",
     "inLanguage": "zh-CN",
     "potentialAction": {
       "@type": "SearchAction",
-      "target": "https://ml-learning.yourdomain.com/search?q={search_term_string}",
+      "target": "https://ml-interactive-learning.vercel.app/search?q={search_term_string}",
       "query-input": "required name=search_term_string"
     }
   }

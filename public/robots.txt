@@ -1,6 +1,6 @@
 User-agent: *
 Allow: /
-Sitemap: https://ml-learning.yourdomain.com/sitemap.xml
+Sitemap: https://ml-interactive-learning.vercel.app/sitemap.xml
 
 # 禁止爬取开发文件
 Disallow: /_next/
