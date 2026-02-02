@@ -5,8 +5,8 @@ export const runtime = 'edge'
 export async function GET(request: Request) {
   try {
     const { searchParams } = new URL(request.url)
-    const title = searchParams.get('title') || '机器学习交互式学习平台'
-    const subtitle = searchParams.get('subtitle') || '基于周志华《机器学习》教材'
+    const title = searchParams.get('title') || 'ML Interactive Learning'
+    const subtitle = searchParams.get('subtitle') || 'Machine Learning Textbook'
 
     return new ImageResponse(
       (
@@ -24,7 +24,7 @@ export async function GET(request: Request) {
               radial-gradient(circle at 80% 70%, rgba(184, 76, 255, 0.15) 0%, transparent 50%),
               linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%)
             `,
-            fontFamily: 'Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif',
+            fontFamily: 'system-ui, -apple-system, sans-serif',
           }}
         >
           {/* 顶部装饰线 */}
@@ -96,7 +96,7 @@ export async function GET(request: Request) {
               textAlign: 'center',
             }}
           >
-            通过可视化和动画深入理解核心概念
+            Interactive Learning with Visual Analytics
           </div>
 
           {/* 统计数据 */}
@@ -109,7 +109,7 @@ export async function GET(request: Request) {
           >
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <div style={{ fontSize: '48px', fontWeight: 'bold', color: '#00d9ff' }}>16</div>
-              <div style={{ fontSize: '20px', color: '#666', marginTop: '8px' }}>章节</div>
+              <div style={{ fontSize: '20px', color: '#666', marginTop: '8px' }}>Chapters</div>
             </div>
             <div
               style={{
@@ -120,7 +120,7 @@ export async function GET(request: Request) {
             />
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
               <div style={{ fontSize: '48px', fontWeight: 'bold', color: '#00ff88' }}>80+</div>
-              <div style={{ fontSize: '20px', color: '#666', marginTop: '8px' }}>核心概念</div>
+              <div style={{ fontSize: '20px', color: '#666', marginTop: '8px' }}>Concepts</div>
             </div>
             <div
               style={{
@@ -130,8 +130,8 @@ export async function GET(request: Request) {
               }}
             />
             <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-              <div style={{ fontSize: '48px', fontWeight: 'bold', color: '#b84cff' }}>∞</div>
-              <div style={{ fontSize: '20px', color: '#666', marginTop: '8px' }}>学习可能</div>
+              <div style={{ fontSize: '48px', fontWeight: 'bold', color: '#b84cff' }}>100+</div>
+              <div style={{ fontSize: '20px', color: '#666', marginTop: '8px' }}>Visuals</div>
             </div>
           </div>
 
