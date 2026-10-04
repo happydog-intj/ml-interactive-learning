@@ -48,6 +48,10 @@ export default {
     )
     // Chapter 5
     app.component(
+      'PerceptronLearningDemo',
+      defineAsyncComponent(() => import('../components/PerceptronLearningDemo.vue'))
+    )
+    app.component(
       'NeuralNetworkViz',
       defineAsyncComponent(() => import('../components/NeuralNetworkViz.vue'))
     )

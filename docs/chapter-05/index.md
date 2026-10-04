@@ -61,6 +61,26 @@ $$f(z) = \begin{cases} 1, & \text{如果 } z \geq 0 \\ 0, & \text{如果 } z < 0
 **局限性：** 感知机只能解决线性可分问题，无法解决异或（XOR）等非线性问题。这一局限性直到多层神经网络和反向传播算法的出现才得以解决。
 :::
 
+### 感知机学习算法：一步步推导出权重向量
+
+把偏置并入权重：令 $x_0 = 1$，$\mathbf{w} = (w_0, w_1, \ldots, w_d)$，标记 $y \in \{-1, +1\}$，预测为
+
+$$\hat{y} = \begin{cases} -1, & \mathbf{w}^T\mathbf{x} \leq 0 \\ +1, & \mathbf{w}^T\mathbf{x} > 0 \end{cases}$$
+
+训练算法只有三步：
+
+1. **初始化**：$\mathbf{w} = \mathbf{0}$。
+2. **逐点检查**：对训练集中每个点 $\mathbf{x}$，若 $y\,\mathbf{w}^T\mathbf{x} \leq 0$（分类错误），则更新 $\mathbf{w}_{\text{new}} = \mathbf{w}_{\text{old}} + y\,\mathbf{x}$。
+3. **终止判断**：若一整轮没有任何更新，算法终止；否则回到步骤 2 再遍历一轮。
+
+为什么用 $y\,\mathbf{w}^T\mathbf{x}$ 判断对错？分类正确时，$\mathbf{w}^T\mathbf{x}$ 与 $y$ 同号，乘积为正；分类错误时两者异号，乘积为负（为 0 时点落在边界上，同样视为错误）。更新后该点的得分变为 $y\,\mathbf{w}_{\text{new}}^T\mathbf{x} = y\,\mathbf{w}_{\text{old}}^T\mathbf{x} + \|\mathbf{x}\|^2$，即被推向正确的一侧，但可能需要多次更新才能到位，也可能让别的点出错。
+
+**收敛性：** 设存在单位向量 $\mathbf{w}^*$ 以间隔 $\gamma$ 分开数据，且 $\|\mathbf{x}\| \leq R$。每次更新 $\mathbf{w}\cdot\mathbf{w}^*$ 至少增加 $\gamma$，而 $\|\mathbf{w}\|^2$ 至多增加 $R^2$，于是 $M\gamma \leq \mathbf{w}\cdot\mathbf{w}^* \leq \|\mathbf{w}\| \leq \sqrt{M}R$，得到更新次数 $M \leq R^2/\gamma^2$。直观地说，$\mathbf{w}$ 与 $\mathbf{w}^*$ 的夹角余弦 $\cos\theta$ 不断增大却不能超过 1，所以算法必定在有限步内停下。
+
+在下面的演示中逐步执行算法：左图看决策边界如何翻转、平移；「本步推导」给出每一步的具体算式；权重空间图展示 $\mathbf{w}_{\text{old}} + y\,\mathbf{x}$ 的向量加法；收敛图展示 $\mathbf{w}\cdot\mathbf{w}^*$ 线性增长、$\|\mathbf{w}\|$ 至多按 $\sqrt{k}$ 增长的“夹逼”过程。
+
+<PerceptronLearningDemo />
+
 ### 激活函数的作用
 
 ::: info 📊 为什么需要非线性？
